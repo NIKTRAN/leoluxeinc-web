@@ -16,6 +16,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Leo Lux ",
   description: "Deals on Luxury items",
+    icons: {
+    icon: "public/images/brand assets/Leo Luxe Logo.svg",
+  },
 };
 
 export default function RootLayout({
