@@ -13,7 +13,6 @@
     "incremental": true,
     "module": "esnext",
     "esModuleInterop": true,
-    
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
@@ -21,7 +20,8 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    "moduleResolution": "bundler"
   },
   "include": [
     "next-env.d.ts",
