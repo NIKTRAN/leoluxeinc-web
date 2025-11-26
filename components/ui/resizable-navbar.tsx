@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 import { cn } from "@/lib/utils";
 import { IconMenu2, IconX } from "@tabler/icons-react";
@@ -8,6 +7,8 @@ import {
   useScroll,
   useMotionValueEvent,
 } from "motion/react";
+
+import Image from "next/image";
 
 import React, { useRef, useState } from "react";
 
@@ -234,17 +235,16 @@ export const MobileNavToggle = ({
 export const NavbarLogo = () => {
   return (
     <a
-      href="./"
+      href="#"
       className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
     >
-      <img
-        src="/images/brand-assets/leoluxeinc-logo.svg"
-        alt="LEO LUXE INC logo"
-        width={300}
-        height={300}
-        className="h-8 w-8"
+      <Image
+        src="https://assets.aceternity.com/logo-dark.png"
+        alt="logo"
+        width={30}
+        height={30}
       />
-      <span className="font-medium text-black dark:text-white">LEO LUXE INC.</span>
+      <span className="font-medium text-black dark:text-white">Startup</span>
     </a>
   );
 };

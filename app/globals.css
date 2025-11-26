@@ -3,11 +3,39 @@
 
 /* removed: @custom-variant dark (&:is(.dark *)); */
 
+
+.logo-filter {
+  filter: none; /* light mode: original color */
+}
+
+
+
+  /* all normal nav text */
+  .nav-text {
+    font-size: 1.1rem;   /* ~17–18px */
+    font-weight: 500;
+  }
+
+  /* bigger label (brand name, etc.) */
+  .nav-label {
+    font-size: 1.4rem;   /* ~22–23px */
+    font-weight: 700;
+  }
+
+  /* buttons / call-to-action text */
+  .nav-button-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+
+
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-montserrat);
+  --font-mono: var(--font-montserrat);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -46,7 +74,7 @@
 /* 🌞 Light theme as default */
 :root {
   /* Tell the browser we support both */
-  color-scheme: light dark;
+  /* color-scheme: light dark; */
 
   --radius: 0.625rem;
   --card: oklch(1 0 0);
@@ -80,6 +108,11 @@
   --sidebar-ring: oklch(0.704 0.04 256.788);
   --background: oklch(1 0 0);
   --foreground: oklch(0.129 0.042 264.695);
+
+    .logo-filter {
+      /* turn dark pixels into light */
+      filter: none;
+    }
 }
 
 /* 🌚 Dark theme via system preference */
@@ -116,14 +149,88 @@
     --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
     --sidebar-border: oklch(1 0 0 / 10%);
     --sidebar-ring: oklch(0.551 0.027 264.364);
+
+    .logo-filter {
+      /* turn dark pixels into light */
+      filter: brightness(0) invert(1);
+    }
   }
 }
+
+
+
+@layer components {
+  /* Menu container (the rounded navbar wrapper) */
+  .nav-menu {
+    @apply relative flex justify-center space-x-4 rounded-full border border-transparent bg-white px-8 py-6 shadow-input dark:border-white/20 dark:bg-black;
+  }
+
+  /* Menu item wrapper */
+  .nav-menu-item-wrapper {
+    @apply relative;
+  }
+
+  /* Menu item label text */
+  .nav-menu-item-label {
+    @apply cursor-pointer text-black hover:opacity-90 dark:text-white;
+  }
+
+  /* Dropdown panel outer wrapper (the floating card) */
+  .nav-menu-panel {
+    @apply overflow-hidden rounded-2xl border border-black/20 bg-white shadow-xl backdrop-blur-sm dark:border-white/20 dark:bg-black;
+  }
+
+  /* Dropdown panel inner content */
+  .nav-menu-panel-inner {
+    @apply h-full w-max p-4;
+  }
+
+  /* Product item wrapper */
+  .nav-product-item {
+    @apply flex space-x-2;
+  }
+
+  /* Product image */
+  .nav-product-image {
+    @apply shrink-0 rounded-md shadow-2xl;
+  }
+
+  /* Product title */
+  .nav-product-title {
+    @apply mb-1 text-xl font-bold text-black dark:text-white;
+  }
+
+  /* Product description */
+  .nav-product-description {
+    @apply max-w-[10rem] text-sm text-neutral-700 dark:text-neutral-300;
+  }
+
+  /* Simple hovered link text */
+  .nav-hovered-link {
+    @apply text-neutral-700 hover:text-black dark:text-neutral-200;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground ;
   }
 }

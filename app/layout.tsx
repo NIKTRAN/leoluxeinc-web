@@ -1,16 +1,31 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { SiteNavbar } from "@/components/ui/site-navbar";
+import MainNavbar from "@/components/main-navbar";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+import localFont from "next/font/local";
+
+// const geistSans = Geist({
+//   variable: "--font-geist-sans",
+//   subsets: ["latin"],
+// });
+
+// const geistMono = Geist_Mono({
+//   variable: "--font-geist-mono",
+//   subsets: ["latin"],
+// });
+
+const montserrat = localFont({
+  src: [
+    {
+      // path is relative to app/layout.tsx
+      path: "../public/fonts/Montserrat-VariableFont_wght.ttf",
+      weight: "100 900", // variable font range
+      style: "normal",
+    },
+  ],
+  variable: "--font-montserrat",
 });
 
 export const metadata: Metadata = {
@@ -27,9 +42,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${montserrat.variable} font-sans antialiased`}
       >
-        <SiteNavbar />
+        <MainNavbar />
         {children}
       </body>
     </html>
