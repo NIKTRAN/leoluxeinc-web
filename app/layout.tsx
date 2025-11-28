@@ -1,20 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import MainNavbar from "@/components/main-navbar";
 
 
 import localFont from "next/font/local";
 
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
 
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
 
 const montserrat = localFont({
   src: [
@@ -42,7 +33,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${montserrat.variable} font-sans antialiased`}
+        className={`
+          ${montserrat.variable} 
+          font-sans antialiased text-base sm:text-xs md:text-lg lg:text-2xl
+          `}
+
       >
         <MainNavbar />
         {children}

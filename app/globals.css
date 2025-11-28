@@ -1,35 +1,23 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+
+
+@tailwind utilities;
+
 /* removed: @custom-variant dark (&:is(.dark *)); */
 
 
-.logo-filter {
-  filter: none; /* light mode: original color */
+@layer components {
+  .nav-text {
+    @apply text-base sm:text-sm md:text-lg lg:text-xl font-semibold;
+  }
 }
 
 
-
-  /* all normal nav text */
-  .nav-text {
-    font-size: 1.1rem;   /* ~17–18px */
-    font-weight: 500;
-  }
-
-  /* bigger label (brand name, etc.) */
-  .nav-label {
-    font-size: 1.4rem;   /* ~22–23px */
-    font-weight: 700;
-  }
-
-  /* buttons / call-to-action text */
-  .nav-button-text {
-    font-size: 1.1rem;
-    font-weight: 600;
-  }
-
-
-
+.logo-text-size {
+  font-size: calc(1em + 1px);
+}
 
 @theme inline {
   --color-background: var(--background);
@@ -159,57 +147,6 @@
 
 
 
-@layer components {
-  /* Menu container (the rounded navbar wrapper) */
-  .nav-menu {
-    @apply relative flex justify-center space-x-4 rounded-full border border-transparent bg-white px-8 py-6 shadow-input dark:border-white/20 dark:bg-black;
-  }
-
-  /* Menu item wrapper */
-  .nav-menu-item-wrapper {
-    @apply relative;
-  }
-
-  /* Menu item label text */
-  .nav-menu-item-label {
-    @apply cursor-pointer text-black hover:opacity-90 dark:text-white;
-  }
-
-  /* Dropdown panel outer wrapper (the floating card) */
-  .nav-menu-panel {
-    @apply overflow-hidden rounded-2xl border border-black/20 bg-white shadow-xl backdrop-blur-sm dark:border-white/20 dark:bg-black;
-  }
-
-  /* Dropdown panel inner content */
-  .nav-menu-panel-inner {
-    @apply h-full w-max p-4;
-  }
-
-  /* Product item wrapper */
-  .nav-product-item {
-    @apply flex space-x-2;
-  }
-
-  /* Product image */
-  .nav-product-image {
-    @apply shrink-0 rounded-md shadow-2xl;
-  }
-
-  /* Product title */
-  .nav-product-title {
-    @apply mb-1 text-xl font-bold text-black dark:text-white;
-  }
-
-  /* Product description */
-  .nav-product-description {
-    @apply max-w-[10rem] text-sm text-neutral-700 dark:text-neutral-300;
-  }
-
-  /* Simple hovered link text */
-  .nav-hovered-link {
-    @apply text-neutral-700 hover:text-black dark:text-neutral-200;
-  }
-}
 
 
 

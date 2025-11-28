@@ -45,16 +45,19 @@ export const Menu: React.FC<MenuProps> = ({
     <nav
       onMouseLeave={() => setActive(null)}
       className={cn(
-        // positioning & layout
-        "relative flex w-screen justify-between",
-        "md:justify-evenly md:gap-1",
+        // layout
+        "relative flex w-full items-center justify-around",
 
-        // border (light + dark)
+        // horizontal padding: base + larger on bigger screens
+        // "px-4 sm:px-10 md:px-40 lg:px-70",
+        "py-2 sm:py-2  md:py-4 lg:py-4",
+
+        // border
         "border border-red-500/20 dark:border-white/20",
 
-        // background & padding
-        "bg-background px-8 py-6 shadow-input",
-
+        // background & vertical padding
+        "bg-background shadow-input",
+        
         className,
       )}
 
@@ -72,10 +75,13 @@ export const Menu: React.FC<MenuProps> = ({
 interface MenuItemProps {
   /** Called when this item becomes active (hovered). */
   setActive: (item: string) => void;
+
   /** Currently active item key. */
   active: string | null;
+
   /** Unique identifier / label for this item. */
   item: string;
+  
   /** Optional panel content shown when this item is active. */
   children?: React.ReactNode;
 
