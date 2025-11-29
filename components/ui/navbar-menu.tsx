@@ -49,11 +49,11 @@ export const Menu: React.FC<MenuProps> = ({
         "relative flex w-full items-center justify-around",
 
         // horizontal padding: base + larger on bigger screens
-        // "px-4 sm:px-10 md:px-40 lg:px-70",
-        "py-2 sm:py-2  md:py-4 lg:py-4",
+        "px-0 md:px-[6vw] lg:px-[vw]",
+        "py-2 sm:py-4  md:py-4 lg:py-4",
 
         // border
-        "border border-red-500/20 dark:border-white/20",
+        "border-b border-black-500/20 dark:border-white/20",
 
         // background & vertical padding
         "bg-background shadow-input",
@@ -73,57 +73,55 @@ export const Menu: React.FC<MenuProps> = ({
 /* -------------------------------------------------------------------------- */
 
 interface MenuItemProps {
-  /** Called when this item becomes active (hovered). */
-  setActive: (item: string) => void;
+  /** Used for active state */
+  id: string;
+
+  /** What to show in the nav (text, SVG, etc.) */
+  label: React.ReactNode;
 
   /** Currently active item key. */
   active: string | null;
 
-  /** Unique identifier / label for this item. */
-  item: string;
-  
+  /** Called when this item becomes active (hovered). */
+  setActive: (id: string) => void;
+
   /** Optional panel content shown when this item is active. */
   children?: React.ReactNode;
 
-  /** Extra classes for the outer wrapper div. */
+  /** Extra classes... */
   className?: string;
-  /** Extra classes for the clickable/hover label text. */
   labelClassName?: string;
-  /** Extra classes for the floating panel container. */
   panelClassName?: string;
-  /** Extra classes for the panel inner content wrapper. */
   panelInnerClassName?: string;
 }
 
 export const MenuItem: React.FC<MenuItemProps> = ({
+  id,
+  label,
   setActive,
   active,
-  item,
   children,
   className,
   labelClassName,
   panelClassName,
   panelInnerClassName,
 }) => {
-  const isActive = active === item;
+  const isActive = active === id;
 
   return (
     <div
-      onMouseEnter={() => setActive(item)}
+      onMouseEnter={() => setActive(id)}  // desktop hover
+      // onClick={handleClick}               // mobile tap
       className={cn("relative", className)}
     >
       <motion.p
         transition={{ duration: 0.3 }}
         className={cn(
-          // base label styles
-          "cursor-pointer",
-          "text-black hover:opacity-90",
-          // dark mode
-          "dark:text-white",
+          "cursor-pointer text-black hover:opacity-90 dark:text-white",
           labelClassName,
         )}
       >
-        {item}
+        {label}
       </motion.p>
 
       {active !== null && (
@@ -133,26 +131,19 @@ export const MenuItem: React.FC<MenuItemProps> = ({
           transition={DEFAULT_TRANSITION}
         >
           {isActive && (
-            <div className={cn("absolute left-1/2 top-[calc(100%+1.2rem)] -translate-x-1/2 transform pt-4)")}>
+            <div className="absolute left-1/2 top-[calc(100%+1.2rem)] -translate-x-1/2 transform pt-4">
               <motion.div
                 transition={DEFAULT_TRANSITION}
                 layoutId="active"
                 className={cn(
-                  // base container styles
-                  "overflow-hidden rounded-2xl border border-black/20",
-                  "bg-white shadow-xl backdrop-blur-sm",
-                  // dark mode
-                  "dark:border-white/20 dark:bg-black",
+                  "overflow-hidden rounded-2xl border border-black/20 bg-background shadow-xl backdrop-blur-sm",
+                  "dark:border-white/20 dark:bg-background",
                   panelClassName,
                 )}
               >
                 <motion.div
                   layout
-                  className={cn(
-                    // inner panel layout
-                    "h-full w-max p-4",
-                    panelInnerClassName,
-                  )}
+                  className={cn("h-full w-max p-4", panelInnerClassName)}
                 >
                   {children}
                 </motion.div>
@@ -164,6 +155,7 @@ export const MenuItem: React.FC<MenuItemProps> = ({
     </div>
   );
 };
+
 
 
 
@@ -233,7 +225,7 @@ export const ProductItem: React.FC<ProductItemProps> = ({
             // text layout & size
             "max-w-40 text-sm",
             // color
-            "text-neutral-700 dark:text-neutral-300",
+            "bg-background dark:text-neutral-300",
             descriptionClassName,
           )}
         >
@@ -264,7 +256,7 @@ export const HoveredLink: React.FC<HoveredLinkProps> = ({
         // base colors
         "text-neutral-700 dark:text-neutral-200",
         // hover behavior
-        "hover:text-black",
+        "hover: bg-background",
         className,
       )}
     >

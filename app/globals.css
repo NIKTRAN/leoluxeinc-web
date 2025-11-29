@@ -16,7 +16,7 @@
 
 
 .logo-text-size {
-  font-size: calc(1em + 1px);
+  font-size: calc(1em + 10px);
 }
 
 @theme inline {
@@ -106,7 +106,7 @@
 /* 🌚 Dark theme via system preference */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: oklch(0.129 0.042 264.695);
+    --background: oklch(0.235 0 263);
     --foreground: oklch(0.984 0.003 247.858);
     --card: oklch(0.208 0.042 265.755);
     --card-foreground: oklch(0.984 0.003 247.858);
