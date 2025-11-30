@@ -32,6 +32,7 @@ interface MenuProps {
   /** Called with null on mouse leave, and item id on hover. */
   setActive: (item: string | null) => void;
   children: React.ReactNode;
+
   /** Extra classes for the menu container nav. */
   className?: string;
 }
@@ -41,29 +42,63 @@ export const Menu: React.FC<MenuProps> = ({
   children,
   className,
 }) => {
+  // Make TS treat children as React elements with props = any
+  const childArray = React.Children.toArray(children) as React.ReactElement<any>[];
+
+  const primaryItems = childArray.filter((child) => {
+    // default: primary if navSlot is not "phone"
+    return child.props.navSlot !== "phone";
+  });
+
+  const phoneItems = childArray.filter((child) => {
+    return child.props.navSlot === "phone";
+  });
+
   return (
-    <nav
+    <div  
+      className="relative"
       onMouseLeave={() => setActive(null)}
-      className={cn(
-        // layout
-        "relative flex w-full items-center justify-around",
-
-        // horizontal padding: base + larger on bigger screens
-        "px-0 md:px-[6vw] lg:px-[vw]",
-        "py-2 sm:py-4  md:py-4 lg:py-4",
-
-        // border
-        "border-b border-black-500/20 dark:border-white/20",
-
-        // background & vertical padding
-        "bg-background shadow-input",
-        
-        className,
-      )}
-
     >
-      {children}
-    </nav>
+        {/* Main navbar (desktop / tablet; also visible on phone if you want) */}
+        <nav
+          className={cn(
+            // layout
+            "relative flex w-full items-center justify-around sm:justify-between",
+
+            // horizontal padding: base + larger on bigger screens
+            "px-4 md:px-[6vw] lg:px-[10vw]",
+            "py-5 sm:py-4 md:py-4 lg:py-4",
+
+            // border
+            "border-b border-black-500/20 dark:border-white/20",
+
+            // background & vertical padding
+            "bg-background shadow-input",
+            className,
+          )}
+        >
+          {primaryItems}
+        </nav>
+
+        {/* Phone-only navbar underneath */}
+        {phoneItems.length > 0 && (
+          <nav
+            onMouseLeave={() => setActive(null)}
+            className={cn(
+              // only show on phone
+              "relative flex w-full items-start justify-around sm:hidden",
+
+              "px-4 md:px-[6vw] lg:px-[10vw]",
+              "py-1",
+              "bg-background shadow-input",
+            )}
+          >
+            {phoneItems}
+          </nav>
+        )}
+  
+  
+  </div>
   );
 };
 
@@ -88,7 +123,9 @@ interface MenuItemProps {
   /** Optional panel content shown when this item is active. */
   children?: React.ReactNode;
 
-  /** Extra classes... */
+  /** Which navbar this item belongs to. Default: primary (desktop/tablet). */
+  navSlot?: "primary" | "phone";
+
   className?: string;
   labelClassName?: string;
   panelClassName?: string;
@@ -110,11 +147,12 @@ export const MenuItem: React.FC<MenuItemProps> = ({
 
   return (
     <div
-      onMouseEnter={() => setActive(id)}  // desktop hover
-      // onClick={handleClick}               // mobile tap
-      className={cn("relative", className)}
+      onMouseEnter={() => setActive(id)}
+      className={cn(
+        "relative flex flex-col items-start", 
+        className)}
     >
-      <motion.p
+      <motion.div
         transition={{ duration: 0.3 }}
         className={cn(
           "cursor-pointer text-black hover:opacity-90 dark:text-white",
@@ -122,7 +160,7 @@ export const MenuItem: React.FC<MenuItemProps> = ({
         )}
       >
         {label}
-      </motion.p>
+      </motion.div>
 
       {active !== null && (
         <motion.div
@@ -131,13 +169,18 @@ export const MenuItem: React.FC<MenuItemProps> = ({
           transition={DEFAULT_TRANSITION}
         >
           {isActive && (
-            <div className="absolute left-1/2 top-[calc(100%+1.2rem)] -translate-x-1/2 transform pt-4">
+            <div 
+              className={cn(
+                  "absolute left-1/2 top-full pt-2",                         // phone: closer
+                  "sm:top-[calc(100%+1.2rem)] sm:pt-4",                      // desktop/tablet: original spacing
+                  "-translate-x-1/2 transform",
+                )}
+            >
               <motion.div
                 transition={DEFAULT_TRANSITION}
                 layoutId="active"
                 className={cn(
-                  "overflow-hidden rounded-2xl border border-black/20 bg-background shadow-xl backdrop-blur-sm",
-                  "dark:border-white/20 dark:bg-background",
+                  "overflow-hidden rounded-2xl border border-black/20  shadow-xl backdrop-blur-sm dark:border-white/20",
                   panelClassName,
                 )}
               >
@@ -155,8 +198,6 @@ export const MenuItem: React.FC<MenuItemProps> = ({
     </div>
   );
 };
-
-
 
 
 /* -------------------------------------------------------------------------- */
@@ -194,7 +235,7 @@ export const ProductItem: React.FC<ProductItemProps> = ({
       href={href}
       className={cn(
         // layout of image + text
-        "flex space-x-2",
+        // "flex space-x-2",
         className,
       )}
     >
@@ -225,7 +266,7 @@ export const ProductItem: React.FC<ProductItemProps> = ({
             // text layout & size
             "max-w-40 text-sm",
             // color
-            "bg-background dark:text-neutral-300",
+            // "bg-background dark:text-neutral-300",
             descriptionClassName,
           )}
         >
@@ -256,7 +297,8 @@ export const HoveredLink: React.FC<HoveredLinkProps> = ({
         // base colors
         "text-neutral-700 dark:text-neutral-200",
         // hover behavior
-        "hover: bg-background",
+        // "hover:bg-background",
+        "transition-colors",
         className,
       )}
     >
