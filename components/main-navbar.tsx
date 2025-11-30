@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
+// import Image from "next/image";
 import Link from "next/link";
 
 
@@ -28,7 +28,11 @@ const MainNavbar: React.FC = () => {
         {/* Products – tablet */}
         <MenuItem
           id="products"
-          label="Products"
+          label={
+            <Link href="/Product" className="inline-flex items-center">
+              Products
+            </Link>
+          }
           active={active}
           setActive={setActive}
           className="hidden sm:block"

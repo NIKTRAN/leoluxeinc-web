@@ -33,16 +33,23 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`
-          ${montserrat.variable} 
-          font-sans antialiased text-base sm:text-xs md:text-lg lg:text-2xl
-          `}
-
+      className={`
+        ${montserrat.variable} 
+        font-sans antialiased text-base sm:text-xs md:text-lg lg:text-2xl
+      `}
       >
         <MainNavbar />
 
-        
-        {children}
+
+
+        <div
+          // className="
+          //   px-[5vw]
+          // "
+        >
+          {children}
+        </div>
+
       </body>
     </html>
   );

@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { motion, type Transition } from "motion/react";
+import { type Transition } from "motion/react";
 import Image from "next/image";
 
 /* -------------------------------------------------------------------------- */
@@ -63,11 +63,11 @@ export const Menu: React.FC<MenuProps> = ({
         <nav
           className={cn(
             // layout
-            "relative flex w-full items-center justify-around sm:justify-between",
+            "fixed inset-x-0 top-0 z-50 flex w-full items-center justify-around",
 
             // horizontal padding: base + larger on bigger screens
             "px-4 md:px-[6vw] lg:px-[10vw]",
-            "py-8 sm:py-4 md:py-4 lg:py-4",
+            "py-8 md:py-4 lg:py-4",
 
             // border
             "border-b border-black-500/20 dark:border-white/20",
@@ -81,16 +81,19 @@ export const Menu: React.FC<MenuProps> = ({
         </nav>
 
         {/* Phone-only navbar underneath */}
+
+
+        
         {phoneItems.length > 0 && (
           <nav
-            onMouseLeave={() => setActive(null)}
             className={cn(
               // only show on phone
-              "relative flex w-full items-start justify-around sm:hidden",
+              "fixed inset-x-0 top-15 z-50 flex items-center justify-around sm:hidden",
 
-              "px-5 md:px-[6vw] lg:px-[10vw]",
+
+              // "px-4 md:px-[6vw] lg:px-[10vw]",
               "py-3",
-              "bg-background shadow-input",
+              "bg-transparent shadow-input",
             )}
           >
             {phoneItems}
@@ -147,9 +150,11 @@ export const MenuItem: React.FC<MenuItemProps> = ({
 
   return (
     <div
+      // Hovering over the label activates this item
       onMouseEnter={() => setActive(id)}
-      onMouseLeave={() => setActive(null)}
-      onClick={() => setActive(isActive ? null : id)} // tap toggle for phone
+      // Clicking toggles it (useful for phone / accessibility)
+      onClick={() => setActive(isActive ? null : id)}
+
       className={cn("relative flex flex-col items-start", className)}
     >
 <div
@@ -171,7 +176,7 @@ export const MenuItem: React.FC<MenuItemProps> = ({
           "z-50",
 
           // animation
-          "transition-opacity transition-transform duration-150 ease-out",
+          "transition-transform duration-150 ease-out",
 
           // visible vs hidden state
           isActive
@@ -294,6 +299,8 @@ export const HoveredLink: React.FC<HoveredLinkProps> = ({
         // base colors
         "text-neutral-700 dark:text-neutral-200",
         // hover behavior
+
+        
         // "hover:bg-background",
         "transition-colors",
         className,
