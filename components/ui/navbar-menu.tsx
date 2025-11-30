@@ -56,7 +56,7 @@ export const Menu: React.FC<MenuProps> = ({
 
   return (
     <div  
-      className="relative"
+      className="relative z-20"
       onMouseLeave={() => setActive(null)}
     >
         {/* Main navbar (desktop / tablet; also visible on phone if you want) */}
@@ -148,30 +148,35 @@ export const MenuItem: React.FC<MenuItemProps> = ({
   return (
     <div
       onMouseEnter={() => setActive(id)}
-      className={cn(
-        "relative flex flex-col items-start", 
-        className)}
+      onMouseLeave={() => setActive(null)}
+      onClick={() => setActive(isActive ? null : id)} // tap toggle for phone
+      className={cn("relative flex flex-col items-start", className)}
     >
-      <motion.div
-        transition={{ duration: 0.3 }}
+<div
         className={cn(
           "cursor-pointer text-black hover:opacity-90 dark:text-white",
           labelClassName,
         )}
       >
         {label}
-      </motion.div>
+      </div>
 
-    {isActive && (
-      <motion.div
-        initial={{ opacity: 0, y: 8 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: 8 }}
-        transition={{ duration: 0.18, ease: "easeOut" }} // no spring, no bounce
+      {/* Panel: always in the DOM, we just fade/slide it with classes */}
+      <div
         className={cn(
-          "absolute left-1/2 top-full pt-2",                  // phone: closer
-          "sm:top-[calc(100%+1.2rem)] sm:pt-4",               // desktop/tablet: more gap
+          // position & spacing
+          "absolute left-1/2 top-full pt-2",
+          "sm:top-[calc(100%+1.2rem)] sm:pt-4",
           "-translate-x-1/2 transform",
+          "z-50",
+
+          // animation
+          "transition-opacity transition-transform duration-150 ease-out",
+
+          // visible vs hidden state
+          isActive
+            ? "opacity-100 translate-y-0 pointer-events-auto"
+            : "opacity-0 -translate-y-2 pointer-events-none",
         )}
       >
         <div
@@ -186,11 +191,11 @@ export const MenuItem: React.FC<MenuItemProps> = ({
             {children}
           </div>
         </div>
-      </motion.div>
-    )}
+      </div>
     </div>
   );
 };
+
 
 /* -------------------------------------------------------------------------- */
 /*                                ProductItem                                 */
