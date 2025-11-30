@@ -67,7 +67,7 @@ export const Menu: React.FC<MenuProps> = ({
 
             // horizontal padding: base + larger on bigger screens
             "px-4 md:px-[6vw] lg:px-[10vw]",
-            "py-5 sm:py-4 md:py-4 lg:py-4",
+            "py-8 sm:py-4 md:py-4 lg:py-4",
 
             // border
             "border-b border-black-500/20 dark:border-white/20",
@@ -88,8 +88,8 @@ export const Menu: React.FC<MenuProps> = ({
               // only show on phone
               "relative flex w-full items-start justify-around sm:hidden",
 
-              "px-4 md:px-[6vw] lg:px-[10vw]",
-              "py-1",
+              "px-5 md:px-[6vw] lg:px-[10vw]",
+              "py-3",
               "bg-background shadow-input",
             )}
           >
@@ -162,43 +162,35 @@ export const MenuItem: React.FC<MenuItemProps> = ({
         {label}
       </motion.div>
 
-      {active !== null && (
-        <motion.div
-          initial={{ opacity: 0, scale: 0.85, y: 10 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={DEFAULT_TRANSITION}
-        >
-          {isActive && (
-            <div 
-              className={cn(
-                  "absolute left-1/2 top-full pt-2",                         // phone: closer
-                  "sm:top-[calc(100%+1.2rem)] sm:pt-4",                      // desktop/tablet: original spacing
-                  "-translate-x-1/2 transform",
-                )}
-            >
-              <motion.div
-                transition={DEFAULT_TRANSITION}
-                layoutId="active"
-                className={cn(
-                  "overflow-hidden rounded-2xl border border-black/20  shadow-xl backdrop-blur-sm dark:border-white/20",
-                  panelClassName,
-                )}
-              >
-                <motion.div
-                  layout
-                  className={cn("h-full w-max p-4", panelInnerClassName)}
-                >
-                  {children}
-                </motion.div>
-              </motion.div>
-            </div>
+    {isActive && (
+      <motion.div
+        initial={{ opacity: 0, y: 8 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 8 }}
+        transition={{ duration: 0.18, ease: "easeOut" }} // no spring, no bounce
+        className={cn(
+          "absolute left-1/2 top-full pt-2",                  // phone: closer
+          "sm:top-[calc(100%+1.2rem)] sm:pt-4",               // desktop/tablet: more gap
+          "-translate-x-1/2 transform",
+        )}
+      >
+        <div
+          className={cn(
+            "overflow-hidden rounded-2xl border border-black/20 shadow-xl backdrop-blur-sm dark:border-white/20",
+            panelClassName,
           )}
-        </motion.div>
-      )}
+        >
+          <div
+            className={cn("h-full w-max p-4", panelInnerClassName)}
+          >
+            {children}
+          </div>
+        </div>
+      </motion.div>
+    )}
     </div>
   );
 };
-
 
 /* -------------------------------------------------------------------------- */
 /*                                ProductItem                                 */
