@@ -70,7 +70,7 @@ export const Menu: React.FC<MenuProps> = ({
             "py-8 md:py-4 lg:py-4",
 
             // border
-            "border-b border-black-500/20 dark:border-white/20",
+            // "border-b border-black-500/20 dark:border-white/20",
 
             // background & vertical padding
             "bg-background shadow-input",
