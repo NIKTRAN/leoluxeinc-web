@@ -92,7 +92,7 @@ export const Menu: React.FC<MenuProps> = ({
 
 
               // "px-4 md:px-[6vw] lg:px-[10vw]",
-              "py-3",
+              "py-1",
               "bg-transparent shadow-input",
             )}
           >

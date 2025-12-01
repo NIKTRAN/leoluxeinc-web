@@ -92,7 +92,7 @@ const MainNavbar: React.FC = () => {
         {/* Products – tablet */}
         <MenuItem
           id="products-phone"
-          label="Products"
+          label={<span className="underline underline-offset-4">Products</span>}
           active={active}
           setActive={setActive}
           navSlot="phone"
@@ -108,12 +108,15 @@ const MainNavbar: React.FC = () => {
 
         <MenuItem
           id="contact-phone"
-          label="Contact"
+          label={<span className="underline underline-offset-4">Contact</span>}
           active={active}
           setActive={setActive}
           navSlot="phone"
         >
-          <HoveredLink href="/Contact">Contact page</HoveredLink>
+          <div className="flex flex-col gap-3">
+            <HoveredLink href="/Contact">Contact page</HoveredLink>
+            <HoveredLink href="tel:+18326721399">Call us:<br />+1 832 672 1399</HoveredLink>
+          </div>
         </MenuItem>
 
 
