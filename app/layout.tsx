@@ -43,9 +43,7 @@ export default function RootLayout({
 
 
         <div
-          // className="
-          //   px-[5vw]
-          // "
+          className=""
         >
           {children}
         </div>

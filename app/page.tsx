@@ -5,15 +5,21 @@ import ProductList from "@/components/ui/product-display/product-list";
 import { Product } from "@/types/product";
 import { getProducts } from "@/lib/api";
 
-const products: Product[] = [
-  { id: 1, title: "Laptop", price: 999, description: "High performance laptop" },
-  { id: 2, title: "Headphones", price: 199, description: "Noise-cancelling headphones" },
-  { id: 3, title: "Smartphone", price: 799, description: "Latest model smartphone" },
+// const products: Product[] = [
+//   { id: 1, title: "Laptop", price: 999, description: "High performance laptop" },
+//   { id: 2, title: "Headphones", price: 199, description: "Noise-cancelling headphones" },
+//   { id: 3, title: "Smartphone", price: 799, description: "Latest model smartphone" },
   
-];
+// ];
 
 
-export default function Home() {
+
+
+
+export default async function Home() {
+
+
+  const products: Product[] = await getProducts();
   return (
 
     <div>
@@ -26,7 +32,8 @@ export default function Home() {
           // height={500}
           alt="Background"
           fill 
-
+          draggable={false}
+          // onDragStart={(e) => e.preventDefault()}
           
           className="
             object-cover
@@ -43,6 +50,8 @@ export default function Home() {
           width={200}
           height={200}
           alt="LEO LUXE INC logo"
+          // draggable={false}
+          // onDragStart={(e) => e.preventDefault()}
           className="
             absolute
             top-1/2
@@ -56,6 +65,9 @@ export default function Home() {
             pointerEvents: none
           "
         />
+        <span>
+          
+        </span>
       </div>
 
 
@@ -99,12 +111,11 @@ export default function Home() {
 
       
       
-
-      <h1>All Products 🛍️</h1>
-      <ProductList products={products} />
-
-
-
+        {/* Content wrapper with gutter */}
+        <div className="px-[2%] w-full h-full box-border">
+          <h1>All Products 🛍️</h1>
+          <ProductList products={products} />
+        </div>
 
 
 

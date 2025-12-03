@@ -8,10 +8,12 @@ interface ProductListProps {
 
 export default function ProductList({ products }: ProductListProps) {
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "20px" }}>
-      {products.map((p) => (
-        <ProductCard key={p.id} product={p} />  
-      ))}
+    <div className="w-full px-[2%] box-border">
+      <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        {products.map(p => (
+          <ProductCard key={p.id} product={p} />
+        ))}
+      </div>
     </div>
   );
 }

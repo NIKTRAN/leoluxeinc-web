@@ -156,9 +156,23 @@
 
 
 
+img, .no-drag img {
+  -webkit-user-drag: none;
+  /* user-drag: none; */
+  user-select: none;
+  -webkit-user-select: none;
+}
 
 
-
+.no-drag, .no-drag * {
+  -webkit-user-drag: none !important;
+  /* user-drag: none !important; */
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+  -webkit-touch-callout: none !important;
+}
 
 
 
