@@ -1,0 +1,11 @@
+// lib/api.ts
+import { Product } from "../types/product";
+
+export async function getProducts(): Promise<Product[]> {
+  // Static for now
+  return [
+    { id: 1, title: "Laptop", price: 999, description: "High performance laptop" },
+    { id: 2, title: "Headphones", price: 199, description: "Noise-cancelling headphones" },
+    { id: 3, title: "Smartphone", price: 799, description: "Latest model smartphone" },
+  ];
+}
