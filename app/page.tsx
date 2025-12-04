@@ -56,11 +56,11 @@ export default async function Home() {
               width={200}
               height={200}
               alt="LEO LUXE INC logo"
-              className="h-[200px] lg:h-[350px] w-auto invert dark:invert-1"
+              className="h-[220px] lg:h-[350px] w-auto invert dark:invert-1"
               draggable={false}
             />
 
-            <h1 className="text-3xl font-sans text-center select-none invert-0 dark:invert-1">
+            <h1 className="text-2xl lg:text-5xl font-sans text-center select-none invert-0 dark:invert-1">
               Deals on luxury items
             </h1>
           </div>
