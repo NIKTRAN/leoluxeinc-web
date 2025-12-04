@@ -37,37 +37,37 @@ export default async function Home() {
           
           className="
             object-cover
-            invert dark:invert-0
             -z-10
+
+            invert-95 dark:invert-0
           "
 
           priority   
         />
 
-        {/* Logo on top */}
-        <Image
-          src="/images/brand-assets/leoluxeinc-logo.svg"
-          width={200}
-          height={200}
-          alt="LEO LUXE INC logo"
-          // draggable={false}
-          // onDragStart={(e) => e.preventDefault()}
-          className="
-            absolute
-            top-1/2
-            left-1/2
-            -translate-x-1/2
-            -translate-y-1/2
-            z-10
-            h-[200px] lg:h-[250px]
-            w-auto
-            invert dark:invert-0
-            pointerEvents: none
-          "
-        />
-        <span>
-          
-        </span>
+
+
+
+        {/* Centered stack: logo + heading */}
+
+        <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
+          <div className="flex flex-col items-center gap-3">
+            <Image
+              src="/images/brand-assets/leoluxeinc-logo.svg"
+              width={200}
+              height={200}
+              alt="LEO LUXE INC logo"
+              className="h-[200px] lg:h-[250px] w-auto invert dark:invert-1"
+              draggable={false}
+            />
+
+            <h1 className="text-3xl font-sans text-center select-none invert-0 dark:invert-1">
+              Deals on luxury items
+            </h1>
+          </div>
+        </div>
+
+
       </div>
 
 
@@ -89,10 +89,10 @@ export default async function Home() {
 
 
 
-      <div className="relative h-[70vh] lg:h-[90vh] w-screen overflow-hidden">
+      <div className="relative h-[70vh] lg:h-[90vh] w-screen">
         {/* Background image */}        
         
-        <Image
+        {/* <Image
 
           src="/images/stock/leoluxebg.png"
           // width={500}
@@ -107,13 +107,15 @@ export default async function Home() {
             -z-10
           "
           priority   
-        />
+        /> */}
 
       
       
         {/* Content wrapper with gutter */}
-        <div className="px-[2%] w-full h-full box-border">
-          <h1>All Products 🛍️</h1>
+        <br></br>
+        <div className="px-[4%] w-full h-full box-border">
+          <h1 className="text-lg font-semibold">All Products </h1>
+
           <ProductList products={products} />
         </div>
 

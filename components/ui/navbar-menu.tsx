@@ -89,10 +89,8 @@ export const Menu: React.FC<MenuProps> = ({
             className={cn(
               // only show on phone
               "fixed inset-x-0 top-15 z-50 flex items-center justify-around sm:hidden",
-
-
               // "px-4 md:px-[6vw] lg:px-[10vw]",
-              "py-1",
+              "py-3",
               "bg-transparent shadow-input",
             )}
           >

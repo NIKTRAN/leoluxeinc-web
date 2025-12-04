@@ -92,7 +92,12 @@ const MainNavbar: React.FC = () => {
         {/* Products – tablet */}
         <MenuItem
           id="products-phone"
-          label={<span className="underline underline-offset-4">Products</span>}
+          label={
+          <span className="underline underline-offset-4 text-lg">
+            Products
+          </span>
+
+          }
           active={active}
           setActive={setActive}
           navSlot="phone"
@@ -108,7 +113,12 @@ const MainNavbar: React.FC = () => {
 
         <MenuItem
           id="contact-phone"
-          label={<span className="underline underline-offset-4">Contact</span>}
+          label={
+          <span className="underline underline-offset-4 text-lg">
+            Contact
+          </span>}
+
+          
           active={active}
           setActive={setActive}
           navSlot="phone"
