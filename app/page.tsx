@@ -22,9 +22,9 @@ export default async function Home() {
   const products: Product[] = await getProducts();
   return (
 
-    <div>
+    <div className="relative pt-10 lg:pt-25">
 
-      <div className="relative h-[70vh] lg:h-[90vh] w-screen overflow-hidden">
+      <div className="relative h-[70vh] lg:h-[85vh] w-full overflow-hidden">
         {/* Background image */}
         <Image
           src="/images/stock/leoluxebg.png"
@@ -38,7 +38,6 @@ export default async function Home() {
           className="
             object-cover
             -z-10
-
             invert-95 dark:invert-0
           "
 
@@ -57,7 +56,7 @@ export default async function Home() {
               width={200}
               height={200}
               alt="LEO LUXE INC logo"
-              className="h-[200px] lg:h-[250px] w-auto invert dark:invert-1"
+              className="h-[200px] lg:h-[350px] w-auto invert dark:invert-1"
               draggable={false}
             />
 
@@ -114,7 +113,8 @@ export default async function Home() {
         {/* Content wrapper with gutter */}
         <br></br>
         <div className="px-[4%] w-full h-full box-border">
-          <h1 className="text-lg font-semibold">All Products </h1>
+          <h1 className="text-2xl text-center font-semibold">All Products </h1>
+          <br></br>
 
           <ProductList products={products} />
         </div>

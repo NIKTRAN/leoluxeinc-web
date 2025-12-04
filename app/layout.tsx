@@ -20,7 +20,7 @@ const montserrat = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "LEO LUXE INC",
+  title: "LEO LUXE INC.",
   description: "Deals on Luxury items",
   
 };

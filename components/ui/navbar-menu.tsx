@@ -60,43 +60,34 @@ export const Menu: React.FC<MenuProps> = ({
       onMouseLeave={() => setActive(null)}
     >
         {/* Main navbar (desktop / tablet; also visible on phone if you want) */}
-        <nav
-          className={cn(
-            // layout
-            "fixed inset-x-0 top-0 z-50 flex w-full items-center justify-around",
-
-            // horizontal padding: base + larger on bigger screens
-            "px-4 md:px-[6vw] lg:px-[10vw]",
-            "py-8 md:py-4 lg:py-4",
-
-            // border
-            // "border-b border-black-500/20 dark:border-white/20",
-
-            // background & vertical padding
-            "bg-background shadow-input",
-            className,
-          )}
-        >
-          {primaryItems}
-        </nav>
-
-        {/* Phone-only navbar underneath */}
+          <nav
+            className={cn(
+              "fixed inset-x-0 top-0 z-50 flex items-center justify-around h-10 lg:h-25",
+              "px-4 md:px-[6vw] lg:px-[10vw]",
+              "py-8 md:py-4 lg:py-4",
+              "bg-background shadow-input",
+              className
+            )}
+            
+          >
+            {primaryItems}
+          </nav>
 
 
-        
+
+        {/* Phone-only navbar underneath */}        
         {phoneItems.length > 0 && (
           <nav
             className={cn(
-              // only show on phone
-              "fixed inset-x-0 top-15 z-50 flex items-center justify-around sm:hidden",
-              // "px-4 md:px-[6vw] lg:px-[10vw]",
-              "py-3",
-              "bg-transparent shadow-input",
+              "fixed inset-x-0 z-50 flex items-center justify-around sm:hidden",
+              "py-2",
+              "bg-transparent shadow-input"
             )}
+            style={{ top: "var(--nav-h)" }}
           >
             {phoneItems}
           </nav>
-        )}
+    )}
   
   
   </div>
