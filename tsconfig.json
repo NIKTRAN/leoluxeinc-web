@@ -37,7 +37,7 @@
     "app", 
     "src", 
     "types"
-  ],
+,   "components/LiveTime"  ],
   "exclude": [
     "node_modules"
   ]

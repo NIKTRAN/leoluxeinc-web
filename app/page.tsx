@@ -1,17 +1,17 @@
 import Image from "next/image";
 
 
-// import ProductList from "@/components/ui/product-display/product-list";
-
-// import { getProducts } from "@/lib/api";
-
 import 'dotenv/config';
-import { drizzle } from 'drizzle-orm/node-postgres';
 
-import { product } from "./db/schema";
+import { product } from "./drizzle/schema";
+
+import { db } from "./drizzle/db"
+
+import LiveTime from "../components/LiveTime";
 
 
-const db = drizzle(process.env.DATABASE_URL!);
+// const db = drizzle(process.env.DATABASE_URL!);
+
 
 // import { sql } from "drizzle-orm";
 
@@ -29,7 +29,7 @@ const db = drizzle(process.env.DATABASE_URL!);
 export default async function Home() {
 
   
-  const resultNow = await db.execute("SELECT NOW()");
+  // const resultNow = await db.execute("SELECT NOW()");
 
   const result = await db.select().from(product)
 
@@ -39,7 +39,8 @@ export default async function Home() {
   
   return (
 
-    <div className="relative pt-10 lg:pt-25">
+    // <div className="relative pt-10 lg:pt-25">
+    <div>
 
       <div className="relative h-[70vh] lg:h-[85vh] w-full overflow-hidden">
         {/* Background image */}
@@ -136,7 +137,9 @@ export default async function Home() {
 
 
           <h1>Neon + Drizzle Connection Test</h1>
-          <p>Connected at: {resultNow.rows[0].now.toString()}</p>
+
+          <LiveTime />
+          {/* <p>Connected at: {resultNow.rows[0].now.toString()}</p> */}
 
 
           <br></br>
@@ -151,7 +154,7 @@ export default async function Home() {
 
           {/* <h1>Products</h1>
 
-<br></br> */}
+          <br></br> */}
         
         
          {result.map((p) => (
@@ -163,8 +166,15 @@ export default async function Home() {
 
           {/* {p.images?.length > 0 && (
             <div>
-              {p.images.map((img, i) => (
-                <img key={i} src={img} alt={p.name} width={80} />
+              {p.images.map((Image, i) => (
+                <Image
+                key={i}
+                src={"null"}
+                alt={p.name}
+                width={80}
+                height={80}
+                className="object-cover rounded"
+              />
               ))}
             </div>
           )} */}

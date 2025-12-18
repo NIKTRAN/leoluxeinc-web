@@ -1,5 +1,5 @@
 {
-  "id": "e3f860ad-9179-48c3-8945-f81adbc9da06",
+  "id": "374934e9-2d7f-49be-be1b-7ed6f8546a79",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -28,13 +28,15 @@
         },
         "type": {
           "name": "type",
-          "type": "text",
+          "type": "product_type",
+          "typeSchema": "public",
           "primaryKey": false,
           "notNull": true
         },
         "gender_category": {
           "name": "gender_category",
-          "type": "text",
+          "type": "gender_category",
+          "typeSchema": "public",
           "primaryKey": false,
           "notNull": true
         },
@@ -54,7 +56,27 @@
       "isRLSEnabled": false
     }
   },
-  "enums": {},
+  "enums": {
+    "public.gender_category": {
+      "name": "gender_category",
+      "schema": "public",
+      "values": [
+        "men",
+        "women",
+        "unisex"
+      ]
+    },
+    "public.product_type": {
+      "name": "product_type",
+      "schema": "public",
+      "values": [
+        "perfume",
+        "bag",
+        "watch",
+        "other"
+      ]
+    }
+  },
   "schemas": {},
   "sequences": {},
   "roles": {},
