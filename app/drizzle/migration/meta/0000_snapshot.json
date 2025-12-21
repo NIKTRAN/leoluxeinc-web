@@ -1,5 +1,5 @@
 {
-  "id": "374934e9-2d7f-49be-be1b-7ed6f8546a79",
+  "id": "7883037e-097e-4d34-8dbb-86054a8ebb62",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -12,7 +12,8 @@
           "name": "id",
           "type": "integer",
           "primaryKey": true,
-          "notNull": true
+          "notNull": true,
+          "default": "nextval('product_id_seq')"
         },
         "name": {
           "name": "name",

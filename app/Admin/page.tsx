@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 
+import { revalidatePath } from "next/cache";
+
 import 'dotenv/config';
 
 
@@ -13,6 +15,26 @@ import { db } from "../drizzle/db";
 // const db = drizzle(process.env.DATABASE_URL!);
 
 
+export async function insertProduct() {
+  "use server";
+
+  try {
+    await db.insert(product).values({
+      name: "name",
+      price: "10.00",
+      type: "other",
+      gender_category: "unisex",
+      images: null
+    });
+
+    revalidatePath("/Admin");
+
+
+  } catch (err) {
+    console.error("POSTGRES ERROR:", err);
+    throw err;
+  }
+}
 
 
 
@@ -21,14 +43,7 @@ export default async function Admin() {
   const result = await db.select().from(product)
 
 
-  await db.insert(product).values({
-    // id: `10`,
-    name: "name",
-    price: "10.00",
-    type: "watch",
-    gender_category: "unisex",
-    images: []
-  })
+
 
 
 
@@ -94,31 +109,23 @@ export default async function Admin() {
 
 
 
-{/* 
 
-        <button
-          className="
-            px-12 py-4 rounded-full font-bold tracking-widest uppercase
 
-            bg-transparent hover:bg-foreground hover:text-background
-            shadow-[inset_0_0_0_2px_#616467]
-            transition duration-200
-          "
-          onClick={
+    <form action={insertProduct}>
+      <button
+        className="
+          px-12 py-4 rounded-full font-bold tracking-widest uppercase
+          bg-transparent hover:bg-foreground hover:text-background
+          shadow-[inset_0_0_0_2px_#616467]
+          transition duration-200
+        "
+        type="submit"
+      >
+        INSERT
+      </button>
+    </form>
 
-            await db.insert(product).values({
-                // id: `10`,
-                name: "name",
-                price:"10.00",
-                type:"watch",
-                gender_category: "unisex",
-                images: "none"
-            }
-          }
-        >
-          INSERT
-        </button>
- */}
+
 
         
       </div>
