@@ -40,11 +40,9 @@ export default function RootLayout({
       >
         <MainNavbar />
 
-
-
         <div
           className="
-          
+          relative pt-10 lg:pt-25
           "
         >
           {children}
