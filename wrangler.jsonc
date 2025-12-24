@@ -6,14 +6,10 @@
   "compatibility_flags": [
     "nodejs_compat"
   ],
-  // Explicitly declare script type to avoid ambiguity
-  "type": "javascript",
-
   "assets": {
     "directory": ".open-next/assets",
     "binding": "ASSETS"
   },
-
   "r2_buckets": [
     {
       "binding": "NEXT_INC_CACHE_R2_BUCKET",
@@ -21,16 +17,8 @@
       "preview_bucket_name": "next-inc-cache"
     }
   ],
-
-  // Use wasm_modules for modules-based workers
   "wasm_modules": {
-    // If you keep the files in node_modules (ensure they exist in CI)
-    "resvg_wasm": "./node_modules/next/dist/compiled/@vercel/og/resvg.wasm",
-    "yoga_wasm": "./node_modules/next/dist/compiled/@vercel/og/yoga.wasm"
-
-    // Alternative: if you copy the .wasm files into your build output,
-    // update the paths accordingly, for example:
-    // "resvg_wasm": "./.open-next/assets/wasm/resvg.wasm",
-    // "yoga_wasm": "./.open-next/assets/wasm/yoga.wasm"
+    "resvg_wasm": "./.open-next/assets/wasm/resvg.wasm",
+    "yoga_wasm": "./.open-next/assets/wasm/yoga.wasm"
   }
 }
