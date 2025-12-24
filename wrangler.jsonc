@@ -16,9 +16,5 @@
       "bucket_name": "next-inc-cache",
       "preview_bucket_name": "next-inc-cache"
     }
-  ],
-  "wasm_modules": {
-    "resvg_wasm": "./node_modules/next/dist/compiled/@vercel/og/resvg.wasm",
-    "yoga_wasm": "./node_modules/next/dist/compiled/@vercel/og/yoga.wasm"
-  }
+  ]
 }
