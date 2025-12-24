@@ -7,7 +7,7 @@ import { product } from "./drizzle/schema";
 
 import { db } from "./drizzle/db"
 
-import LiveTime from "../components/LiveTime";
+// import LiveTime from "../components/LiveTime";
 
 
 // const db = drizzle(process.env.DATABASE_URL!);
@@ -28,15 +28,15 @@ import LiveTime from "../components/LiveTime";
 
 export default async function Home() {
 
-  
+
   // const resultNow = await db.execute("SELECT NOW()");
 
-  const result = await db.select().from(product)
+  // const result = await db.select().from(product)
 
 
   // fetch all products
   // const rows = (await db.select().from(product).execute()) as ProductRow[];
-  
+
   return (
 
     // <div className="relative pt-10 lg:pt-25">
@@ -49,17 +49,17 @@ export default async function Home() {
           // width={500}
           // height={500}
           alt="Background"
-          fill 
+          fill
           draggable={false}
           // onDragStart={(e) => e.preventDefault()}
-          
+
           className="
             object-cover
             -z-10
             invert-95 dark:invert-0
           "
 
-          priority   
+          priority
         />
 
 
@@ -91,7 +91,7 @@ export default async function Home() {
 
       {/* <div className="h-[100px] w-[100vw] overflow-hidden"> */}
 
-        {/* <Image
+      {/* <Image
           src="/images/stock/leoluxebg.png"
           width={500}
           height={500}
@@ -107,8 +107,8 @@ export default async function Home() {
 
 
       <div className="relative h-[70vh] lg:h-[90vh] w-screen">
-        {/* Background image */}        
-        
+        {/* Background image */}
+
         {/* <Image
 
           src="/images/stock/leoluxebg.png"
@@ -126,10 +126,12 @@ export default async function Home() {
           priority   
         /> */}
 
-      
-      
+
+
         {/* Content wrapper with gutter */}
         <br></br>
+
+
         <div className="px-[4%] w-full h-full box-border">
           <h1 className="text-2xl text-center font-semibold">All Products </h1>
           <br></br>
@@ -138,7 +140,7 @@ export default async function Home() {
 
           <h1>Neon + Drizzle Connection Test</h1>
 
-          <LiveTime />
+          {/* <LiveTime /> */}
           {/* <p>Connected at: {resultNow.rows[0].now.toString()}</p> */}
 
 
@@ -150,50 +152,49 @@ export default async function Home() {
 
 
 
+{/* 
 
 
-          {/* <h1>Products</h1>
+          {result.map((p) => (
+            <div key={p.id}>
+              <p>Name: {p.name}</p>
+              <p>Price: {p.price}</p>
+              <p>Type: {p.type}</p>
+              <p>Gender: {p.gender_category}</p>
 
-          <br></br> */}
-        
-        
-         {result.map((p) => (
-        <div key={p.id}>
-          <p>Name: {p.name}</p>
-          <p>Price: {p.price}</p>
-          <p>Type: {p.type}</p>
-          <p>Gender: {p.gender_category}</p>
+              {p.images?.length > 0 && (
+                <div>
+                  {p.images.map((Image, i) => (
+                    <Image
+                      key={i}
+                      src={"null"}
+                      alt={p.name}
+                      width={80}
+                      height={80}
+                      className="object-cover rounded"
+                    />
+                  ))}
+                </div>
+              )}
+              <br></br>
 
-          {/* {p.images?.length > 0 && (
-            <div>
-              {p.images.map((Image, i) => (
-                <Image
-                key={i}
-                src={"null"}
-                alt={p.name}
-                width={80}
-                height={80}
-                className="object-cover rounded"
-              />
-              ))}
             </div>
-          )} */}
-          <br></br>
-          
-        </div>
-      ))}
-        
-        
-        
-        
-        
+          ))}
 
 
-        
+ */}
+
+
+
+
+
         </div>
 
       </div>
-      
+
+
+
+
     </div>
 
   );
