@@ -33,8 +33,11 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts",
     "**/*.ts",
-    "**/*.tsx"
-  ],
+    "**/*.tsx",
+    "app", 
+    "src", 
+    "types"
+,   "components/LiveTime"  ],
   "exclude": [
     "node_modules"
   ]
