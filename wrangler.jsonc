@@ -19,8 +19,12 @@
     }
   ],
 
+  "wasm_modules": {
+    "resvg_wasm": "./node_modules/next/dist/compiled/@vercel/og/resvg.wasm",
+    "yoga_wasm": "./node_modules/next/dist/compiled/@vercel/og/yoga.wasm"
+  }
+
   // Optional: routes/zone if you deploy to a custom domain
   // "route": "",
   // "zone_id": ""
 }
-
