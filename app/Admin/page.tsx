@@ -38,16 +38,16 @@
 
 
 
-// export default async function Admin() {
+export default async function Admin() {
 
-//   const result = await db.select().from(product)
-
-
+  // const result = await db.select().from(product)
 
 
 
 
-//   return (
+
+
+  return (
 //     // <div className="relative pt-10 lg:pt-25">
 //     <div>
 //       <div className="px-[4%] w-full h-full box-border">
@@ -132,5 +132,6 @@
 
 //     </div>
 //     </div>
-//   );
-// }
+1
+  );
+}
