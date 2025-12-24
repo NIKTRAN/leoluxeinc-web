@@ -1,0 +1,34 @@
+{
+  "app": {
+    "[project]/app/About/page": [
+      "static/media/Montserrat_VariableFont_wght-s.p.c38f889e.ttf"
+    ],
+    "[project]/app/Admin/page": [
+      "static/media/Montserrat_VariableFont_wght-s.p.c38f889e.ttf"
+    ],
+    "[project]/app/Contact/page": [
+      "static/media/Montserrat_VariableFont_wght-s.p.c38f889e.ttf"
+    ],
+    "[project]/app/Product/Men/page": [
+      "static/media/Montserrat_VariableFont_wght-s.p.c38f889e.ttf"
+    ],
+    "[project]/app/Product/Unisex/page": [
+      "static/media/Montserrat_VariableFont_wght-s.p.c38f889e.ttf"
+    ],
+    "[project]/app/Product/Women/page": [
+      "static/media/Montserrat_VariableFont_wght-s.p.c38f889e.ttf"
+    ],
+    "[project]/app/Product/page": [
+      "static/media/Montserrat_VariableFont_wght-s.p.c38f889e.ttf"
+    ],
+    "[project]/app/_not-found/page": [
+      "static/media/Montserrat_VariableFont_wght-s.p.c38f889e.ttf"
+    ],
+    "[project]/app/page": [
+      "static/media/Montserrat_VariableFont_wght-s.p.c38f889e.ttf"
+    ]
+  },
+  "appUsingSizeAdjust": true,
+  "pages": {},
+  "pagesUsingSizeAdjust": false
+}

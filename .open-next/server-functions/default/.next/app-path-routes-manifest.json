@@ -1,0 +1,13 @@
+{
+  "/About/page": "/About",
+  "/Admin/page": "/Admin",
+  "/Contact/page": "/Contact",
+  "/Product/Men/page": "/Product/Men",
+  "/Product/Unisex/page": "/Product/Unisex",
+  "/Product/Women/page": "/Product/Women",
+  "/Product/page": "/Product",
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/favicon.ico/route": "/favicon.ico",
+  "/page": "/"
+}

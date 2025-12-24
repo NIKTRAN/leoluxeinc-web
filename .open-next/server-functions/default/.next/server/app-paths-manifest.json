@@ -1,0 +1,13 @@
+{
+  "/About/page": "app/About/page.js",
+  "/Admin/page": "app/Admin/page.js",
+  "/Contact/page": "app/Contact/page.js",
+  "/Product/Men/page": "app/Product/Men/page.js",
+  "/Product/Unisex/page": "app/Product/Unisex/page.js",
+  "/Product/Women/page": "app/Product/Women/page.js",
+  "/Product/page": "app/Product/page.js",
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/page": "app/page.js"
+}
