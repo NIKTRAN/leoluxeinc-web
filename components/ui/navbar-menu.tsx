@@ -142,7 +142,7 @@ export const MenuItem: React.FC<MenuItemProps> = ({
       // Hovering over the label activates this item
       onMouseEnter={() => setActive(id)}
       // Clicking toggles it (useful for phone / accessibility)
-      onClick={() => setActive(isActive ? null : id)}
+      // onClick={() => setActive(isActive ? null : id)}
 
       className={cn("relative flex flex-col items-start", className)}
     >
