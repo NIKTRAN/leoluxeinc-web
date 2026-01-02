@@ -13,7 +13,7 @@
 			// Self-reference service binding, the service name must match the worker name
 			// see https://opennext.js.org/cloudflare/caching
 			"binding": "WORKER_SELF_REFERENCE",
-			"service": "leoluxeinc-web"
+			"service": "leoluxeinc-web-dynamic"
 		}
 	],
 	"r2_buckets": [
