@@ -2348,6 +2348,11 @@
       "imports": [],
       "format": "cjs"
     },
+    ".open-next/server-functions/default/.next/server/app/Admin/page_client-reference-manifest.js": {
+      "bytes": 4300,
+      "imports": [],
+      "format": "cjs"
+    },
     ".open-next/server-functions/default/.next/server/app/About/page_client-reference-manifest.js": {
       "bytes": 4288,
       "imports": [],
@@ -2369,7 +2374,7 @@
       "format": "cjs"
     },
     ".open-next/server-functions/default/node_modules/next/dist/server/load-manifest.js": {
-      "bytes": 18202,
+      "bytes": 19125,
       "imports": [
         {
           "path": "fs",
@@ -2405,6 +2410,11 @@
           "path": ".open-next/server-functions/default/.next/server/app/Contact/page_client-reference-manifest.js",
           "kind": "require-call",
           "original": "/home/nik/Clone repos/leoluxeinc-web/.open-next/server-functions/default/.next/server/app/Contact/page_client-reference-manifest.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/app/Admin/page_client-reference-manifest.js",
+          "kind": "require-call",
+          "original": "/home/nik/Clone repos/leoluxeinc-web/.open-next/server-functions/default/.next/server/app/Admin/page_client-reference-manifest.js"
         },
         {
           "path": ".open-next/server-functions/default/.next/server/app/About/page_client-reference-manifest.js",
@@ -2488,13 +2498,18 @@
       ],
       "format": "cjs"
     },
+    ".open-next/server-functions/default/.next/server/chunks/710.js": {
+      "bytes": 7089,
+      "imports": [],
+      "format": "cjs"
+    },
     ".open-next/server-functions/default/.next/server/chunks/948.js": {
       "bytes": 57712,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/webpack-runtime.js": {
-      "bytes": 1773,
+      "bytes": 2757,
       "imports": [
         {
           "path": ".open-next/server-functions/default/.next/server/chunks/446.js",
@@ -2510,6 +2525,11 @@
           "path": ".open-next/server-functions/default/.next/server/chunks/682.js",
           "kind": "require-call",
           "original": "./chunks/682.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/chunks/710.js",
+          "kind": "require-call",
+          "original": "./chunks/710.js"
         },
         {
           "path": ".open-next/server-functions/default/.next/server/chunks/948.js",
@@ -3113,47 +3133,6 @@
       ],
       "format": "cjs"
     },
-    ".open-next/server-functions/default/.next/server/app/page.js": {
-      "bytes": 16955,
-      "imports": [
-        {
-          "path": ".open-next/server-functions/default/node_modules/next/dist/client/components/action-async-storage.external.js",
-          "kind": "require-call",
-          "original": "next/dist/client/components/action-async-storage.external.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/node_modules/next/dist/client/components/request-async-storage.external.js",
-          "kind": "require-call",
-          "original": "next/dist/client/components/request-async-storage.external.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/node_modules/next/dist/client/components/static-generation-async-storage.external.js",
-          "kind": "require-call",
-          "original": "next/dist/client/components/static-generation-async-storage.external.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
-          "kind": "require-call",
-          "original": "next/dist/compiled/next-server/app-page.runtime.prod.js"
-        },
-        {
-          "path": "path",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": "url",
-          "kind": "require-call",
-          "external": true
-        },
-        {
-          "path": ".open-next/server-functions/default/.next/server/webpack-runtime.js",
-          "kind": "require-call",
-          "original": "../webpack-runtime.js"
-        }
-      ],
-      "format": "cjs"
-    },
     ".open-next/server-functions/default/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js": {
       "bytes": 47752,
       "imports": [
@@ -3201,8 +3180,792 @@
       ],
       "format": "cjs"
     },
+    ".open-next/server-functions/default/.next/server/app/page.js": {
+      "bytes": 9916,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/next/dist/client/components/action-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/client/components/action-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/next/dist/client/components/request-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/client/components/request-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/next/dist/client/components/static-generation-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/client/components/static-generation-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
+          "kind": "require-call",
+          "original": "next/dist/compiled/next-server/app-page.runtime.prod.js"
+        },
+        {
+          "path": "path",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "url",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/webpack-runtime.js",
+          "kind": "require-call",
+          "original": "../webpack-runtime.js"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/postgres-array/index.js": {
+      "bytes": 2320,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/pg-types/lib/arrayParser.js": {
+      "bytes": 208,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/postgres-array/index.js",
+          "kind": "require-call",
+          "original": "postgres-array"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/postgres-date/index.js": {
+      "bytes": 2676,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/xtend/mutable.js": {
+      "bytes": 369,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/postgres-interval/index.js": {
+      "bytes": 3413,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/xtend/mutable.js",
+          "kind": "require-call",
+          "original": "xtend/mutable"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/postgres-bytea/index.js": {
+      "bytes": 863,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/pg-types/lib/textParsers.js": {
+      "bytes": 5367,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/postgres-array/index.js",
+          "kind": "require-call",
+          "original": "postgres-array"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg-types/lib/arrayParser.js",
+          "kind": "require-call",
+          "original": "./arrayParser"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/postgres-date/index.js",
+          "kind": "require-call",
+          "original": "postgres-date"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/postgres-interval/index.js",
+          "kind": "require-call",
+          "original": "postgres-interval"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/postgres-bytea/index.js",
+          "kind": "require-call",
+          "original": "postgres-bytea"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/pg-int8/index.js": {
+      "bytes": 1572,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/pg-types/lib/binaryParsers.js": {
+      "bytes": 6063,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg-int8/index.js",
+          "kind": "require-call",
+          "original": "pg-int8"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/pg-types/lib/builtins.js": {
+      "bytes": 1564,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/pg-types/index.js": {
+      "bytes": 1214,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg-types/lib/textParsers.js",
+          "kind": "require-call",
+          "original": "./lib/textParsers"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg-types/lib/binaryParsers.js",
+          "kind": "require-call",
+          "original": "./lib/binaryParsers"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg-types/lib/arrayParser.js",
+          "kind": "require-call",
+          "original": "./lib/arrayParser"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg-types/lib/builtins.js",
+          "kind": "require-call",
+          "original": "./lib/builtins"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/pg/lib/defaults.js": {
+      "bytes": 2506,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg-types/index.js",
+          "kind": "require-call",
+          "original": "pg-types"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/pg/lib/utils.js": {
+      "bytes": 5642,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg/lib/defaults.js",
+          "kind": "require-call",
+          "original": "./defaults"
+        },
+        {
+          "path": "util",
+          "kind": "require-call",
+          "external": true
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/pg/lib/crypto/utils-legacy.js": {
+      "bytes": 1215,
+      "imports": [
+        {
+          "path": "crypto",
+          "kind": "require-call",
+          "external": true
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/pg/lib/crypto/utils-webcrypto.js": {
+      "bytes": 2649,
+      "imports": [
+        {
+          "path": "crypto",
+          "kind": "require-call",
+          "external": true
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/pg/lib/crypto/utils.js": {
+      "bytes": 341,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg/lib/crypto/utils-legacy.js",
+          "kind": "require-call",
+          "original": "./utils-legacy"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg/lib/crypto/utils-webcrypto.js",
+          "kind": "require-call",
+          "original": "./utils-webcrypto"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/pg/lib/crypto/cert-signatures.js": {
+      "bytes": 4096,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/pg/lib/crypto/sasl.js": {
+      "bytes": 7423,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg/lib/crypto/utils.js",
+          "kind": "require-call",
+          "original": "./utils"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg/lib/crypto/cert-signatures.js",
+          "kind": "require-call",
+          "original": "./cert-signatures"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/pg/lib/type-overrides.js": {
+      "bytes": 770,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg-types/index.js",
+          "kind": "require-call",
+          "original": "pg-types"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/pg-connection-string/index.js": {
+      "bytes": 7141,
+      "imports": [
+        {
+          "path": "node:process",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "fs",
+          "kind": "require-call",
+          "external": true
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/pg/lib/connection-parameters.js": {
+      "bytes": 5282,
+      "imports": [
+        {
+          "path": "dns",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg/lib/defaults.js",
+          "kind": "require-call",
+          "original": "./defaults"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg-connection-string/index.js",
+          "kind": "require-call",
+          "original": "pg-connection-string"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/pg/lib/result.js": {
+      "bytes": 2812,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg-types/index.js",
+          "kind": "require-call",
+          "original": "pg-types"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/pg/lib/query.js": {
+      "bytes": 7314,
+      "imports": [
+        {
+          "path": "events",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg/lib/result.js",
+          "kind": "require-call",
+          "original": "./result"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg/lib/utils.js",
+          "kind": "require-call",
+          "original": "./utils"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/pg-protocol/dist/messages.js": {
+      "bytes": 4973,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/pg-protocol/dist/buffer-writer.js": {
+      "bytes": 2772,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/pg-protocol/dist/serializer.js": {
+      "bytes": 6937,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg-protocol/dist/buffer-writer.js",
+          "kind": "require-call",
+          "original": "./buffer-writer"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/pg-protocol/dist/buffer-reader.js": {
+      "bytes": 1639,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/pg-protocol/dist/parser.js": {
+      "bytes": 13444,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg-protocol/dist/messages.js",
+          "kind": "require-call",
+          "original": "./messages"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg-protocol/dist/buffer-reader.js",
+          "kind": "require-call",
+          "original": "./buffer-reader"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/pg-protocol/dist/index.js": {
+      "bytes": 791,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg-protocol/dist/messages.js",
+          "kind": "require-call",
+          "original": "./messages"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg-protocol/dist/serializer.js",
+          "kind": "require-call",
+          "original": "./serializer"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg-protocol/dist/parser.js",
+          "kind": "require-call",
+          "original": "./parser"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/pg-cloudflare/dist/index.js": {
+      "bytes": 4895,
+      "imports": [
+        {
+          "path": "events",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "cloudflare:sockets",
+          "kind": "dynamic-import",
+          "external": true
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/pg/lib/stream.js": {
+      "bytes": 2132,
+      "imports": [
+        {
+          "path": "net",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "tls",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg-cloudflare/dist/index.js",
+          "kind": "require-call",
+          "original": "pg-cloudflare"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/pg/lib/connection.js": {
+      "bytes": 5175,
+      "imports": [
+        {
+          "path": "events",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg-protocol/dist/index.js",
+          "kind": "require-call",
+          "original": "pg-protocol"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg/lib/stream.js",
+          "kind": "require-call",
+          "original": "./stream"
+        },
+        {
+          "path": "net",
+          "kind": "require-call",
+          "external": true
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/split2/index.js": {
+      "bytes": 3764,
+      "imports": [
+        {
+          "path": "stream",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "string_decoder",
+          "kind": "require-call",
+          "external": true
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/pgpass/lib/helper.js": {
+      "bytes": 5488,
+      "imports": [
+        {
+          "path": "path",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "stream",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/split2/index.js",
+          "kind": "require-call",
+          "original": "split2"
+        },
+        {
+          "path": "util",
+          "kind": "require-call",
+          "external": true
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/pgpass/lib/index.js": {
+      "bytes": 467,
+      "imports": [
+        {
+          "path": "path",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "fs",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/pgpass/lib/helper.js",
+          "kind": "require-call",
+          "original": "./helper.js"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/pg/lib/client.js": {
+      "bytes": 20137,
+      "imports": [
+        {
+          "path": "events",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg/lib/utils.js",
+          "kind": "require-call",
+          "original": "./utils"
+        },
+        {
+          "path": "util",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg/lib/crypto/sasl.js",
+          "kind": "require-call",
+          "original": "./crypto/sasl"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg/lib/type-overrides.js",
+          "kind": "require-call",
+          "original": "./type-overrides"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg/lib/connection-parameters.js",
+          "kind": "require-call",
+          "original": "./connection-parameters"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg/lib/query.js",
+          "kind": "require-call",
+          "original": "./query"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg/lib/defaults.js",
+          "kind": "require-call",
+          "original": "./defaults"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg/lib/connection.js",
+          "kind": "require-call",
+          "original": "./connection"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg/lib/crypto/utils.js",
+          "kind": "require-call",
+          "original": "./crypto/utils"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/pgpass/lib/index.js",
+          "kind": "require-call",
+          "original": "pgpass"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/pg-pool/index.js": {
+      "bytes": 13465,
+      "imports": [
+        {
+          "path": "events",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg/lib/index.js",
+          "kind": "require-call",
+          "original": "pg"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/pg/lib/native/query.js": {
+      "bytes": 4757,
+      "imports": [
+        {
+          "path": "events",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "util",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg/lib/utils.js",
+          "kind": "require-call",
+          "original": "../utils"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/pg/lib/native/client.js": {
+      "bytes": 8066,
+      "imports": [
+        {
+          "path": "pg-native",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg/lib/type-overrides.js",
+          "kind": "require-call",
+          "original": "../type-overrides"
+        },
+        {
+          "path": "events",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "util",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg/lib/connection-parameters.js",
+          "kind": "require-call",
+          "original": "../connection-parameters"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg/lib/native/query.js",
+          "kind": "require-call",
+          "original": "./query"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/pg/lib/native/index.js": {
+      "bytes": 50,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg/lib/native/client.js",
+          "kind": "require-call",
+          "original": "./client"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/pg/lib/index.js": {
+      "bytes": 1810,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg/lib/client.js",
+          "kind": "require-call",
+          "original": "./client"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg/lib/defaults.js",
+          "kind": "require-call",
+          "original": "./defaults"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg/lib/connection.js",
+          "kind": "require-call",
+          "original": "./connection"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg/lib/result.js",
+          "kind": "require-call",
+          "original": "./result"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg/lib/utils.js",
+          "kind": "require-call",
+          "original": "./utils"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg-pool/index.js",
+          "kind": "require-call",
+          "original": "pg-pool"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg/lib/type-overrides.js",
+          "kind": "require-call",
+          "original": "./type-overrides"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg-protocol/dist/index.js",
+          "kind": "require-call",
+          "original": "pg-protocol"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg/lib/utils.js",
+          "kind": "require-call",
+          "original": "./utils"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg-types/index.js",
+          "kind": "require-call",
+          "original": "pg-types"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg/lib/native/index.js",
+          "kind": "require-call",
+          "original": "./native"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg/lib/native/index.js",
+          "kind": "require-call",
+          "original": "./native"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/pg/esm/index.mjs": {
+      "bytes": 579,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg/lib/index.js",
+          "kind": "import-statement",
+          "original": "../lib/index.js"
+        }
+      ],
+      "format": "esm"
+    },
+    ".open-next/server-functions/default/.next/server/app/Admin/page.js": {
+      "bytes": 134334,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/next/dist/client/components/action-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/client/components/action-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/next/dist/client/components/request-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/client/components/request-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/next/dist/client/components/static-generation-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/client/components/static-generation-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
+          "kind": "require-call",
+          "original": "next/dist/compiled/next-server/app-page.runtime.prod.js"
+        },
+        {
+          "path": "path",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "url",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/pg/esm/index.mjs",
+          "kind": "dynamic-import",
+          "original": "pg"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/webpack-runtime.js",
+          "kind": "require-call",
+          "original": "../../webpack-runtime.js"
+        }
+      ],
+      "format": "cjs"
+    },
     ".open-next/server-functions/default/node_modules/next/dist/server/require.js": {
-      "bytes": 19826,
+      "bytes": 20033,
       "imports": [
         {
           "path": "path",
@@ -3300,14 +4063,19 @@
           "original": "/home/nik/Clone repos/leoluxeinc-web/.open-next/server-functions/default/.next/server/app/Product/page.js"
         },
         {
+          "path": ".open-next/server-functions/default/.next/server/app/favicon.ico/route.js",
+          "kind": "require-call",
+          "original": "/home/nik/Clone repos/leoluxeinc-web/.open-next/server-functions/default/.next/server/app/favicon.ico/route.js"
+        },
+        {
           "path": ".open-next/server-functions/default/.next/server/app/page.js",
           "kind": "require-call",
           "original": "/home/nik/Clone repos/leoluxeinc-web/.open-next/server-functions/default/.next/server/app/page.js"
         },
         {
-          "path": ".open-next/server-functions/default/.next/server/app/favicon.ico/route.js",
+          "path": ".open-next/server-functions/default/.next/server/app/Admin/page.js",
           "kind": "require-call",
-          "original": "/home/nik/Clone repos/leoluxeinc-web/.open-next/server-functions/default/.next/server/app/favicon.ico/route.js"
+          "original": "/home/nik/Clone repos/leoluxeinc-web/.open-next/server-functions/default/.next/server/app/Admin/page.js"
         }
       ],
       "format": "cjs"
@@ -4590,7 +5358,7 @@
       "format": "esm"
     },
     ".open-next/server-functions/default/index.mjs": {
-      "bytes": 81003,
+      "bytes": 81140,
       "imports": [
         {
           "path": "node:module",
@@ -4856,6 +5624,156 @@
         },
         {
           "path": "url",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "path",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "url",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "util",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "crypto",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "crypto",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "node:process",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "fs",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "dns",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "events",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "events",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "cloudflare:sockets",
+          "kind": "dynamic-import",
+          "external": true
+        },
+        {
+          "path": "net",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "tls",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "events",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "net",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "stream",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "string_decoder",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "path",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "stream",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "util",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "path",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "fs",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "events",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "util",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "events",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "events",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "util",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "pg-native",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "events",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "util",
           "kind": "require-call",
           "external": true
         },
@@ -5657,6 +6575,9 @@
         ".open-next/server-functions/default/.next/server/app/Contact/page_client-reference-manifest.js": {
           "bytesInOutput": 4112
         },
+        ".open-next/server-functions/default/.next/server/app/Admin/page_client-reference-manifest.js": {
+          "bytesInOutput": 4118
+        },
         ".open-next/server-functions/default/.next/server/app/About/page_client-reference-manifest.js": {
           "bytesInOutput": 4106
         },
@@ -5670,7 +6591,7 @@
           "bytesInOutput": 4183
         },
         ".open-next/server-functions/default/node_modules/next/dist/server/load-manifest.js": {
-          "bytesInOutput": 15338
+          "bytesInOutput": 16057
         },
         ".open-next/server-functions/default/node_modules/react/cjs/react.production.min.js": {
           "bytesInOutput": 6806
@@ -5693,11 +6614,14 @@
         ".open-next/server-functions/default/.next/server/chunks/682.js": {
           "bytesInOutput": 34818
         },
+        ".open-next/server-functions/default/.next/server/chunks/710.js": {
+          "bytesInOutput": 7387
+        },
         ".open-next/server-functions/default/.next/server/chunks/948.js": {
           "bytesInOutput": 59908
         },
         ".open-next/server-functions/default/.next/server/webpack-runtime.js": {
-          "bytesInOutput": 1815
+          "bytesInOutput": 2864
         },
         ".open-next/server-functions/default/.next/server/pages/_app.js": {
           "bytesInOutput": 3513
@@ -5771,17 +6695,146 @@
         ".open-next/server-functions/default/.next/server/app/Product/page.js": {
           "bytesInOutput": 6962
         },
-        ".open-next/server-functions/default/.next/server/app/page.js": {
-          "bytesInOutput": 17456
-        },
         ".open-next/server-functions/default/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js": {
           "bytesInOutput": 49951
         },
         ".open-next/server-functions/default/.next/server/app/favicon.ico/route.js": {
           "bytesInOutput": 348893
         },
+        ".open-next/server-functions/default/.next/server/app/page.js": {
+          "bytesInOutput": 10162
+        },
+        ".open-next/server-functions/default/node_modules/postgres-array/index.js": {
+          "bytesInOutput": 1773
+        },
+        ".open-next/server-functions/default/node_modules/pg-types/lib/arrayParser.js": {
+          "bytesInOutput": 284
+        },
+        ".open-next/server-functions/default/node_modules/postgres-date/index.js": {
+          "bytesInOutput": 1792
+        },
+        ".open-next/server-functions/default/node_modules/xtend/mutable.js": {
+          "bytesInOutput": 372
+        },
+        ".open-next/server-functions/default/node_modules/postgres-interval/index.js": {
+          "bytesInOutput": 2426
+        },
+        ".open-next/server-functions/default/node_modules/postgres-bytea/index.js": {
+          "bytesInOutput": 686
+        },
+        ".open-next/server-functions/default/node_modules/pg-types/lib/textParsers.js": {
+          "bytesInOutput": 3948
+        },
+        ".open-next/server-functions/default/node_modules/pg-int8/index.js": {
+          "bytesInOutput": 1092
+        },
+        ".open-next/server-functions/default/node_modules/pg-types/lib/binaryParsers.js": {
+          "bytesInOutput": 4174
+        },
+        ".open-next/server-functions/default/node_modules/pg-types/lib/builtins.js": {
+          "bytesInOutput": 867
+        },
+        ".open-next/server-functions/default/node_modules/pg-types/index.js": {
+          "bytesInOutput": 878
+        },
+        ".open-next/server-functions/default/node_modules/pg/lib/defaults.js": {
+          "bytesInOutput": 1015
+        },
+        ".open-next/server-functions/default/node_modules/pg/lib/utils.js": {
+          "bytesInOutput": 3563
+        },
+        ".open-next/server-functions/default/node_modules/pg/lib/crypto/utils-legacy.js": {
+          "bytesInOutput": 968
+        },
+        ".open-next/server-functions/default/node_modules/pg/lib/crypto/utils-webcrypto.js": {
+          "bytesInOutput": 1581
+        },
+        ".open-next/server-functions/default/node_modules/pg/lib/crypto/utils.js": {
+          "bytesInOutput": 342
+        },
+        ".open-next/server-functions/default/node_modules/pg/lib/crypto/cert-signatures.js": {
+          "bytesInOutput": 2844
+        },
+        ".open-next/server-functions/default/node_modules/pg/lib/crypto/sasl.js": {
+          "bytesInOutput": 5797
+        },
+        ".open-next/server-functions/default/node_modules/pg/lib/type-overrides.js": {
+          "bytesInOutput": 775
+        },
+        ".open-next/server-functions/default/node_modules/pg-connection-string/index.js": {
+          "bytesInOutput": 4466
+        },
+        ".open-next/server-functions/default/node_modules/pg/lib/connection-parameters.js": {
+          "bytesInOutput": 3655
+        },
+        ".open-next/server-functions/default/node_modules/pg/lib/result.js": {
+          "bytesInOutput": 1792
+        },
+        ".open-next/server-functions/default/node_modules/pg/lib/query.js": {
+          "bytesInOutput": 3603
+        },
+        ".open-next/server-functions/default/node_modules/pg-protocol/dist/messages.js": {
+          "bytesInOutput": 4074
+        },
+        ".open-next/server-functions/default/node_modules/pg-protocol/dist/buffer-writer.js": {
+          "bytesInOutput": 1713
+        },
+        ".open-next/server-functions/default/node_modules/pg-protocol/dist/serializer.js": {
+          "bytesInOutput": 4206
+        },
+        ".open-next/server-functions/default/node_modules/pg-protocol/dist/buffer-reader.js": {
+          "bytesInOutput": 1181
+        },
+        ".open-next/server-functions/default/node_modules/pg-protocol/dist/parser.js": {
+          "bytesInOutput": 7394
+        },
+        ".open-next/server-functions/default/node_modules/pg-protocol/dist/index.js": {
+          "bytesInOutput": 766
+        },
+        ".open-next/server-functions/default/node_modules/pg-cloudflare/dist/index.js": {
+          "bytesInOutput": 3115
+        },
+        ".open-next/server-functions/default/node_modules/pg/lib/stream.js": {
+          "bytesInOutput": 1161
+        },
+        ".open-next/server-functions/default/node_modules/pg/lib/connection.js": {
+          "bytesInOutput": 3670
+        },
+        ".open-next/server-functions/default/node_modules/split2/index.js": {
+          "bytesInOutput": 1962
+        },
+        ".open-next/server-functions/default/node_modules/pgpass/lib/helper.js": {
+          "bytesInOutput": 3426
+        },
+        ".open-next/server-functions/default/node_modules/pgpass/lib/index.js": {
+          "bytesInOutput": 463
+        },
+        ".open-next/server-functions/default/node_modules/pg/lib/client.js": {
+          "bytesInOutput": 13408
+        },
+        ".open-next/server-functions/default/node_modules/pg-pool/index.js": {
+          "bytesInOutput": 8655
+        },
+        ".open-next/server-functions/default/node_modules/pg/lib/native/query.js": {
+          "bytesInOutput": 3422
+        },
+        ".open-next/server-functions/default/node_modules/pg/lib/native/client.js": {
+          "bytesInOutput": 5316
+        },
+        ".open-next/server-functions/default/node_modules/pg/lib/native/index.js": {
+          "bytesInOutput": 170
+        },
+        ".open-next/server-functions/default/node_modules/pg/lib/index.js": {
+          "bytesInOutput": 1409
+        },
+        ".open-next/server-functions/default/node_modules/pg/esm/index.mjs": {
+          "bytesInOutput": 1055
+        },
+        ".open-next/server-functions/default/.next/server/app/Admin/page.js": {
+          "bytesInOutput": 141292
+        },
         ".open-next/server-functions/default/node_modules/next/dist/server/require.js": {
-          "bytesInOutput": 16268
+          "bytesInOutput": 16353
         },
         ".open-next/server-functions/default/node_modules/next/dist/lib/interop-default.js": {
           "bytesInOutput": 363
@@ -5955,10 +7008,10 @@
           "bytesInOutput": 8688
         },
         ".open-next/server-functions/default/index.mjs": {
-          "bytesInOutput": 55752
+          "bytesInOutput": 55868
         }
       },
-      "bytes": 2420839
+      "bytes": 2683570
     }
   }
 }
