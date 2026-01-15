@@ -1,26 +1,32 @@
 
 
-// export const dynamic = "force-dynamic";
+export const dynamic = "force-dynamic";
 
 
 
-// import Image from "next/image";
-// import { insertProduct } from "./actions";
-// import { product } from "../drizzle/schema";
-// import { getDb } from "../drizzle/db";
+import Image from "next/image";
+import { insertProduct } from "./actions";
+import { product } from "../drizzle/schema";
+import { getDb } from "../drizzle/db";
 
 
-export default function Admin() {
-  // const db = getDb();
-  // const result = await db.select().from(product);
+export default async function Admin() {
+  const db = getDb();
+  const result = await db.select().from(product);
 
   return (
+
+    //this div make stuff cetner verticaly
+    <div className="relative pt-10 lg:pt-25">
     <div>
       <div className="px-[4%] w-full h-full box-border">
-        <div className="flex flex-col items-center justify-center space-y-8">
-          <h1>This is the admin page</h1>
+      <div className="flex flex-col items-center justify-center space-y-8">
+        <h1>This is the admin page</h1>
 
-          {/* <table className="min-w-full border border-gray-300">
+
+
+
+          <table className="min-w-full border border-gray-300">
             <thead>
               <tr>
                 {Object.keys(result[0]).map((col) => (
@@ -59,9 +65,9 @@ export default function Admin() {
                 </tr>
               ))}
             </tbody>
-          </table> */}
+          </table>
 
-          {/* <form action={insertProduct}>
+          <form action={insertProduct}>
             <button
               className="
                 px-12 py-4 rounded-full font-bold tracking-widest uppercase
@@ -73,9 +79,10 @@ export default function Admin() {
             >
               INSERT
             </button>
-          </form> */}
+          </form>
         </div>
       </div>
+    </div>
     </div>
   );
 }

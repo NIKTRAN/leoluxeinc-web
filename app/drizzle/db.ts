@@ -1,10 +1,11 @@
 import { drizzle } from "drizzle-orm/node-postgres";
 import { Pool } from "pg";
-import * as schema from "./schema";
+import * as schema from "./schema"; // relative to drizzle/db.ts
 
 export function getDb() {
-  const connectionString =
-    process.env.HYPERDRIVE_CONNECTION_STRING || process.env.DATABASE_URL;
+  const connectionString = process.env.HYPERDRIVE;
+
+
 
   if (!connectionString) {
     throw new Error("Missing database connection string");

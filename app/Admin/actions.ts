@@ -1,19 +1,40 @@
-// import { drizzle } from "drizzle-orm/node-postgres";
-// import { Pool } from "pg";
-// import * as schema from "../drizzle/schema";
+"use server";
 
-// export function getDb() {
-//   const connectionString =
-//     process.env.HYPERDRIVE_CONNECTION_STRING || process.env.DATABASE_URL;
+import { revalidatePath } from "next/cache";
+import { getDb } from "../drizzle/db"; // adjust path if needed
+import { product } from "../drizzle/schema";
 
-//   if (!connectionString) {
-//     throw new Error("Missing database connection string");
+export async function insertProduct() {
+  try {
+    const db = getDb();
+
+    await db.insert(product).values({
+      name: "name",
+      price: "10.00",
+      type: "other",
+      gender_category: "unisex",
+      images: null,
+    });
+
+    revalidatePath("/Admin");
+  } catch (err) {
+    console.error("POSTGRES ERROR:", err);
+    throw err;
+  }
+}
+
+
+
+
+
+
+
+// export async function insertProduct() {
+//   try {
+//     console.log("DEBUG: insertProduct called");
+//     return;
+//   } catch (err) {
+//     console.error("DEBUG ERROR:", err);
+//     throw err;
 //   }
-
-//   const pool = new Pool({
-//     connectionString,
-//     ssl: { rejectUnauthorized: false },
-//   });
-
-//   return drizzle(pool, { schema });
 // }
