@@ -1,13 +1,18 @@
-import Image from "next/image";
+
+
+// export const dynamic = "force-dynamic";
+
+
+
+// import Image from "next/image";
 // import { insertProduct } from "./actions";
-import { product } from "../drizzle/schema";
-import { getDb } from "../drizzle/db";
+// import { product } from "../drizzle/schema";
+// import { getDb } from "../drizzle/db";
 
-export const dynamic = "force-dynamic";
 
-export default async function Admin() {
-  const db = getDb();
-  const result = await db.select().from(product);
+export default function Admin() {
+  // const db = getDb();
+  // const result = await db.select().from(product);
 
   return (
     <div>
@@ -15,7 +20,7 @@ export default async function Admin() {
         <div className="flex flex-col items-center justify-center space-y-8">
           <h1>This is the admin page</h1>
 
-          <table className="min-w-full border border-gray-300">
+          {/* <table className="min-w-full border border-gray-300">
             <thead>
               <tr>
                 {Object.keys(result[0]).map((col) => (
@@ -54,7 +59,7 @@ export default async function Admin() {
                 </tr>
               ))}
             </tbody>
-          </table>
+          </table> */}
 
           {/* <form action={insertProduct}>
             <button
