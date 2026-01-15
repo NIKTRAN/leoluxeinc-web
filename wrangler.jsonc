@@ -1,6 +1,7 @@
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
 	"main": ".open-next/worker.js",
+	// "name": "leoluxeinc-web-dynamic",
 	"name": "leoluxeinc-web-dynamic",
 	"compatibility_date": "2026-01-01",
 	"observability": {
@@ -39,14 +40,14 @@
 		"binding": "IMAGES"
 	},
 	// Add this to your wrangler.jsonc
-	"hyperdrive": [
-		{
-			"binding": "HYPERDRIVE",
-			"id": "feb80b498ed2425c96fa37ca3c0dbca0",
+	// "hyperdrive": [
+	// 	{
+	// 		"binding": "HYPERDRIVE",
+	// 		"id": "feb80b498ed2425c96fa37ca3c0dbca0",
 
 			
-			// Optional. Can be used to connect to a local database for local development with `wrangler dev`
-			"localConnectionString": "postgres://user:pass@localhost:5432/hyperdrive"
-		}
-	]
+	// 		// Optional. Can be used to connect to a local database for local development with `wrangler dev`
+	// 		"localConnectionString": "postgres://user:pass@localhost:5432/hyperdrive"
+	// 	}
+	// ]
 }

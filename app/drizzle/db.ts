@@ -1,20 +1,16 @@
-import { drizzle } from "drizzle-orm/node-postgres";
-import { Pool } from "pg";
-import * as schema from "./schema"; // relative to drizzle/db.ts
+import { neon } from "@neondatabase/serverless";
+import { drizzle } from "drizzle-orm/neon-http";
+import * as schema from "./schema";
+
+console.log("Worker started — drizzle/db.ts loaded");
 
 export function getDb() {
-  const connectionString = process.env.HYPERDRIVE;
+  const url = process.env.DATABASE_URL;
 
-
-
-  if (!connectionString) {
-    throw new Error("Missing database connection string");
+  if (!url) {
+    throw new Error("Missing DATABASE_URL");
   }
 
-  const pool = new Pool({
-    connectionString,
-    ssl: { rejectUnauthorized: false },
-  });
-
-  return drizzle(pool, { schema });
+  const sql = neon(url);
+  return drizzle(sql, { schema });
 }
