@@ -46,7 +46,7 @@
 
 			
 			// Optional. Can be used to connect to a local database for local development with `wrangler dev`
-			"localConnectionString": "postgres://user:pass@localhost:5432/hyperdrive"
+			// "localConnectionString": "postgres://user:pass@localhost:5432/hyperdrive"
 		}
 	]
 }
