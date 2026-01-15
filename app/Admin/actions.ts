@@ -1,19 +1,19 @@
-"use server";
+import { drizzle } from "drizzle-orm/node-postgres";
+import { Pool } from "pg";
+import * as schema from "../drizzle/schema";
 
-import { revalidatePath } from "next/cache";
-import { getDb } from "../drizzle/db";
-import { product } from "../drizzle/schema";
+export function getDb() {
+  const connectionString =
+    process.env.HYPERDRIVE_CONNECTION_STRING || process.env.DATABASE_URL;
 
-export async function insertProduct() {
-  const db = getDb(); // env is injected automatically by OpenNext
+  if (!connectionString) {
+    throw new Error("Missing database connection string");
+  }
 
-  await db.insert(product).values({
-    name: "name",
-    price: "10.00",
-    type: "other",
-    gender_category: "unisex",
-    images: null,
+  const pool = new Pool({
+    connectionString,
+    ssl: { rejectUnauthorized: false },
   });
 
-  revalidatePath("/Admin");
+  return drizzle(pool, { schema });
 }

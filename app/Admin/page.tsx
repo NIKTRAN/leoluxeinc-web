@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { insertProduct } from "./actions";
+// import { insertProduct } from "./actions";
 import { product } from "../drizzle/schema";
 import { getDb } from "../drizzle/db";
 
@@ -56,7 +56,7 @@ export default async function Admin() {
             </tbody>
           </table>
 
-          <form action={insertProduct}>
+          {/* <form action={insertProduct}>
             <button
               className="
                 px-12 py-4 rounded-full font-bold tracking-widest uppercase
@@ -68,7 +68,7 @@ export default async function Admin() {
             >
               INSERT
             </button>
-          </form>
+          </form> */}
         </div>
       </div>
     </div>
