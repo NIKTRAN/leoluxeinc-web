@@ -36,7 +36,7 @@
     "**/*.mts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "app/Admin/ProductForm.jsx", "app/Admin/ProductForm.jsx", "app/Admin/ProductForm.jsx", "app/Admin/ProductForm.jsx", "app/Admin/ProductForm.jsx", "app/Admin/ProductForm.jsx", "app/Admin/ProductForm.jsx", "app/Admin/ProductForm.jsx", "app/Admin/ProductForm.jsx"  ],
   "exclude": [
     "node_modules"
   ]

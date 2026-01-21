@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { type Transition } from "motion/react";
 import Image from "next/image";
 
@@ -122,6 +123,8 @@ interface MenuItemProps {
   labelClassName?: string;
   panelClassName?: string;
   panelInnerClassName?: string;
+
+  href?: string
 }
 
 export const MenuItem: React.FC<MenuItemProps> = ({
@@ -134,6 +137,7 @@ export const MenuItem: React.FC<MenuItemProps> = ({
   labelClassName,
   panelClassName,
   panelInnerClassName,
+  href,
 }) => {
   const isActive = active === id;
 
@@ -146,14 +150,26 @@ export const MenuItem: React.FC<MenuItemProps> = ({
 
       className={cn("relative flex flex-col items-start", className)}
     >
-<div
-        className={cn(
-          "cursor-pointer text-black hover:opacity-90 dark:text-white",
-          labelClassName,
-        )}
-      >
-        {label}
-      </div>
+      {href ? (
+        <Link
+          href={href}
+          className={cn(
+            "cursor-pointer text-black hover:opacity-90 dark:text-white",
+            labelClassName
+          )}
+        >
+          {label}
+        </Link>
+      ) : (
+        <div
+          className={cn(
+            "cursor-pointer text-black hover:opacity-90 dark:text-white",
+            labelClassName
+          )}
+        >
+          {label}
+        </div>
+      )}
 
       {/* Panel: always in the DOM, we just fade/slide it with classes */}
       <div
@@ -179,9 +195,7 @@ export const MenuItem: React.FC<MenuItemProps> = ({
             panelClassName,
           )}
         >
-          <div
-            className={cn("h-full w-max p-4", panelInnerClassName)}
-          >
+          <div className={cn("h-full w-max p-4", panelInnerClassName)}>
             {children}
           </div>
         </div>

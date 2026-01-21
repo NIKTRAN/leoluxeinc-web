@@ -26,24 +26,26 @@ const MainNavbar: React.FC = () => {
         </MenuItem> */}
 
         {/* Products – tablet */}
-        <MenuItem
-          id="products"
-          label={
-            <Link href="/Product" className="inline-flex items-center">
-              Products
-            </Link>
-          }
-          active={active}
-          setActive={setActive}
-          className="hidden sm:block"
-        >
-          <div className="flex flex-col gap-3">
-            <HoveredLink href="/Product">All products</HoveredLink>
-            <HoveredLink href="/Product/Men">Men</HoveredLink>
-            <HoveredLink href="/Product/Women">Women</HoveredLink>
-            <HoveredLink href="/Product/Unisex">Unisex</HoveredLink>
-          </div>
-        </MenuItem>
+      <MenuItem
+        id="products"
+        label={
+          <span className="inline-flex items-center">
+            Products
+          </span>
+        }
+        href="/"
+        active={active}
+        setActive={setActive}
+        className="hidden sm:block"
+      >
+        <div className="flex flex-col gap-3">
+          <HoveredLink href="/Product">All products</HoveredLink>
+          <HoveredLink href="/Product/Men">Men</HoveredLink>
+          <HoveredLink href="/Product/Women">Women</HoveredLink>
+          <HoveredLink href="/Product/Unisex">Unisex</HoveredLink>
+        </div>
+      </MenuItem>
+
 
 
         {/*logo + site name */}
@@ -66,7 +68,7 @@ const MainNavbar: React.FC = () => {
 
 
         {/* Contact – desktop / tablet */}
-        <MenuItem
+        {/* <MenuItem
           id="contact"
           label="Contact"
           active={active}
@@ -74,13 +76,20 @@ const MainNavbar: React.FC = () => {
           className="hidden sm:block"
         >
           <HoveredLink href="/Contact">Contact page</HoveredLink>
-        </MenuItem>
+        </MenuItem> */}
 
 
 
 
-
-
+        {/* Admin – desktop / tablet */}
+        <MenuItem
+          id="admin"
+          label="Admin"
+          href="/Admin"
+          setActive={setActive}
+          active={active}
+          className="hidden sm:block"
+        />
 
 
 
@@ -92,6 +101,7 @@ const MainNavbar: React.FC = () => {
         {/* Products – tablet */}
         <MenuItem
           id="products-phone"
+          href="/"
           label={
           <span className="underline underline-offset-4 text-lg">
             Products
@@ -111,7 +121,7 @@ const MainNavbar: React.FC = () => {
         </MenuItem>
 
 
-        <MenuItem
+        {/* <MenuItem
           id="contact-phone"
           label={
           <span className="underline underline-offset-4 text-lg">
@@ -127,7 +137,25 @@ const MainNavbar: React.FC = () => {
             <HoveredLink href="/Contact">Contact page</HoveredLink>
             <HoveredLink href="tel:+18326721399">Call us:<br />+1 832 672 1399</HoveredLink>
           </div>
+        </MenuItem> */}
+
+
+        <MenuItem
+          id="contact-phone"
+          label={
+          <Link 
+            className="underline underline-offset-4 text-lg"
+            href="/Admin">
+            Admin
+          </Link>}
+
+          
+          active={active}
+          setActive={setActive}
+          navSlot="phone"
+        >
         </MenuItem>
+
 
 
         {/* Phone Menu – phone only */}
