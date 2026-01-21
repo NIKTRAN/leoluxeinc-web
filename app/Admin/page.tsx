@@ -32,13 +32,16 @@ export default async function Admin() {
 </div>
 
 
-        <div className="
-          w-[98vw] max-w-6xl mx-auto 
-          bg-background border border-border rounded-xl 
-          shadow-xl 
-          max-h-[70vh] 
-          overflow-y-auto overflow-x-auto
-        ">
+<div
+  className="
+    w-[98vw] max-w-6xl mx-auto
+    bg-background border border-border rounded-xl
+    shadow-xl
+    max-h-[calc(100vh-280px)]
+    overflow-y-auto overflow-x-auto
+  "
+>
+
 
           <table className="w-full border-collapse">
             <thead>

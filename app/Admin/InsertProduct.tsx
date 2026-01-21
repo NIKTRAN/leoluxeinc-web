@@ -13,7 +13,7 @@ export default function InsertProduct() {
       <button
         onClick={() => setOpen(true)}
         className="
-          fixed bottom-6 left-1/2 -translate-x-1/2 z-10
+          fixed bottom-6 left-1/2 -translate-x-1/2 
           px-6 py-4 rounded-full font-bold uppercase
           bg-transparent hover:bg-foreground hover:text-background
           shadow-[inset_0_0_0_2px_#616467]
