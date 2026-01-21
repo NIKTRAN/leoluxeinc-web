@@ -168,7 +168,7 @@ export default function ProductForm({
 
           <button
             formAction={deleteProduct}
-            type="submit"
+            type="button"
             className="
               px-15 py-2 rounded-md text-md font-semibold
               bg-red-600 text-white hover:bg-red-700
