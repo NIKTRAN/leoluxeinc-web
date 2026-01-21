@@ -39,6 +39,7 @@ export default async function Admin() {
     shadow-xl
     max-h-[calc(100vh-280px)]
     overflow-y-auto overflow-x-auto
+    mb-10
   "
 >
 

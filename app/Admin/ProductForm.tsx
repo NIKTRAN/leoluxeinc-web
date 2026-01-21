@@ -1,5 +1,9 @@
 "use client";
 
+
+
+import { deleteProduct } from "./actions";
+
 type ProductFormProps = {
   initial: {
     id?: number;
@@ -21,7 +25,7 @@ export default function ProductForm({
   showId,
   onClose,
 }: ProductFormProps) {
-  const rowClass = "border-b px-4 py-6";
+  const rowClass = "border-b px-4 py-";
 
   return (
     <form
@@ -141,13 +145,50 @@ export default function ProductForm({
             className="border p-2 rounded w-full"
           />
         </div>
+
+
+
+
+      {/* DELETE PRODUCT */}
+      {showId && initial?.id && (
+        <div className={""}>
+          <input type="hidden" name="id" value={initial.id} />
+
+          <button
+            formAction={deleteProduct}
+            type="submit"
+            className="
+              px-15 py-2 rounded-md text-md font-semibold
+              bg-red-600 text-white hover:bg-red-700
+              transition
+            "
+          >
+            Delete Product
+          </button>
+        </div>
+      )}
+
+
       </div>
+
       <button
         type="submit"
         className="px-12 py-4 rounded-full font-bold uppercase bg-transparent hover:bg-foreground hover:text-background shadow-[inset_0_0_0_2px_#616467] transition"
       >
         {showId ? "SAVE CHANGES" : "ADD PRODUCT"}
       </button>
+
+
+
+
+
+
+
+
+
+
+
+
     </form>
   );
 }
