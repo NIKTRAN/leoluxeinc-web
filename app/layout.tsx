@@ -22,7 +22,12 @@ const montserrat = localFont({
 export const metadata: Metadata = {
   title: "LEO LUXE INC.",
   description: "Deals on Luxury items",
-  
+  openGraph: {
+    images: ["/images/brand-assets/preview-img.png"],
+  },
+  twitter: {
+    images: ["/images/brand-assets/preview-img.png"],
+  },
 };
 
 export default function RootLayout({
