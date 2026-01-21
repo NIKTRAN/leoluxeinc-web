@@ -72,17 +72,25 @@ export default function ProductForm({
         {/* PRICE */}
         <div className="rowClass">
           <span className="font-bold block mb-2">PRICE</span>
+
           <div className="grid grid-cols-2 gap-3">
+            {/* Dollars */}
             <input
               type="text"
+              inputMode="numeric"
+              pattern="[0-9]*"
               name="price_dollars"
               defaultValue={initial.price_dollars}
               placeholder="$ DOLLAR"
               className="border p-2 rounded text-center text-xl"
             />
 
+            {/* Cents (2 digits max) */}
             <input
               type="text"
+              inputMode="numeric"
+              pattern="[0-9]*"
+              maxLength={2}
               name="price_cents"
               defaultValue={initial.price_cents}
               placeholder="CENT"
@@ -91,19 +99,23 @@ export default function ProductForm({
           </div>
         </div>
 
-        {/* STOCK */}
-        <div className="rowClass">
-          <span className="font-bold block mb-2">STOCK</span>
-          <input
-            type="number"
-            name="stock"
-            min={0}
-            defaultValue={initial.stock}
-            placeholder="STOCK"
-            className="border p-2 rounded w-full text-center text-xl"
-            required
-          />
-        </div>
+
+      {/* STOCK */}
+      <div className="rowClass">
+        <span className="font-bold block mb-2">STOCK</span>
+        <input
+          type="text"
+          inputMode="numeric"
+          pattern="[0-9]*"
+          name="stock"
+          min={0}
+          defaultValue={initial.stock}
+          placeholder="STOCK"
+          className="border p-2 rounded w-full text-center text-xl"
+          required
+        />
+      </div>
+
 
         {/* TYPE */}
         <div className="rowClass">
